@@ -1,0 +1,2951 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>PFD Training Quiz</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Barlow:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg: #0d0f14;
+    --surface: #151820;
+    --surface2: #1c2030;
+    --surface3: #232840;
+    --border: #2a3050;
+    --accent: #EB190A;
+    --accent2: #e8572a;
+    --green: #2ecc71;
+    --red: #e74c3c;
+    --blue: #3d8ef8;
+    --text: #e8ecf4;
+    --text2: #8892a8;
+    --text3: #556070;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ---- LAYOUT ---- */
+  .screen { display: none; min-height: 100vh; }
+  .screen.active { display: flex; flex-direction: column; }
+
+  .header {
+    background: var(--surface);
+    border-bottom: 2px solid var(--accent);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky; top: 0; z-index: 100;
+  }
+
+  .header-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 1.4rem;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+
+  .header-sub {
+    font-size: 0.7rem;
+    color: var(--text2);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+
+  .streak-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--surface3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    min-width: 90px;
+  }
+
+  .streak-fire { font-size: 1.4rem; }
+  .streak-count {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .streak-label {
+    font-size: 0.6rem;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .main { flex: 1; padding: 20px; max-width: 700px; margin: 0 auto; width: 100%; }
+
+  /* ---- HOME PAGE ---- */
+  .page-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text2);
+    margin-bottom: 4px;
+  }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .section-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .section-number {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  /* ---- CATEGORY TOGGLES ---- */
+  .category-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .category-row:last-child { border-bottom: none; }
+  .cat-info { flex: 1; }
+  .cat-name {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+  .cat-count {
+    font-size: 0.78rem;
+    color: var(--text2);
+    margin-top: 2px;
+  }
+
+  .toggle {
+    position: relative;
+    width: 56px;
+    height: 30px;
+    flex-shrink: 0;
+    margin-left: 12px;
+  }
+  .toggle input { opacity: 0; width: 0; height: 0; }
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: var(--surface3);
+    border: 1px solid var(--border);
+    border-radius: 30px;
+    transition: 0.2s;
+  }
+  .toggle-slider:before {
+    content: '';
+    position: absolute;
+    height: 22px; width: 22px;
+    left: 3px; bottom: 3px;
+    background: var(--text2);
+    border-radius: 50%;
+    transition: 0.2s;
+  }
+  .toggle input:checked + .toggle-slider { background: var(--accent); border-color: var(--accent); }
+  .toggle input:checked + .toggle-slider:before { transform: translateX(26px); background: #fff; }
+
+  /* ---- ANSWER MODE ---- */
+  .mode-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+  }
+  .mode-btn {
+    padding: 14px 8px;
+    border-radius: 10px;
+    border: 2px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: center;
+  }
+  .mode-btn.selected {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(245, 35, 35, 0.1);
+  }
+
+  /* ---- QUESTION COUNT ---- */
+  .preset-grid {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .preset-btn {
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .preset-btn.selected, .preset-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(245, 35, 35, 0.08);
+  }
+  .count-input {
+    width: 100%;
+    background: var(--surface2);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.1rem;
+    outline: none;
+  }
+  .count-input:focus { border-color: var(--accent); }
+
+  /* ---- SEED ---- */
+  .seed-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+  }
+  .seed-btn {
+    padding: 14px 0;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+    background: var(--surface2);
+    color: var(--text2);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: center;
+  }
+  .seed-btn.selected {
+    border-color: var(--blue);
+    color: var(--blue);
+    background: rgba(61,142,248,0.1);
+  }
+
+  /* ---- START BUTTON ---- */
+  .btn-primary {
+    width: 100%;
+    padding: 18px;
+    border-radius: 12px;
+    background: var(--accent);
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-top: 8px;
+  }
+  .btn-primary:hover { background: #f74040; transform: translateY(-1px); }
+  .btn-primary:disabled { background: var(--surface3); color: var(--text3); cursor: not-allowed; transform: none; }
+
+  .btn-secondary {
+    padding: 14px 24px;
+    border-radius: 10px;
+    background: var(--surface2);
+    border: 2px solid var(--border);
+    color: var(--text);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-secondary:hover { border-color: var(--text2); }
+
+  .btn-danger {
+    padding: 14px 24px;
+    border-radius: 10px;
+    background: rgba(231,76,60,0.12);
+    border: 2px solid var(--red);
+    color: var(--red);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+
+  /* ---- QUIZ SCREEN ---- */
+  .quiz-header-bar {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: sticky; top: 0; z-index: 100;
+  }
+
+  .quiz-progress-wrap { flex: 1; min-width: 140px; }
+  .quiz-progress-label {
+    font-size: 0.72rem;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .progress-bar-bg {
+    height: 6px;
+    background: var(--surface3);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .progress-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 4px;
+    transition: width 0.3s;
+  }
+
+  .quiz-streak-live {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--surface3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 6px 12px;
+  }
+  .quiz-streak-live .num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--accent);
+  }
+  .quiz-streak-live .lbl {
+    font-size: 0.65rem;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .quiz-score-live {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.1rem;
+    color: var(--text2);
+  }
+  .quiz-score-live .hits { color: var(--green); font-weight: 700; }
+
+  .quiz-body { padding: 20px; max-width: 700px; margin: 0 auto; width: 100%; flex: 1; }
+
+  .question-chip {
+    display: inline-block;
+    background: var(--surface3);
+    border-radius: 6px;
+    padding: 4px 12px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text2);
+    margin-bottom: 14px;
+  }
+
+  .question-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--text);
+    margin-bottom: 24px;
+  }
+
+  /* MC answers */
+  .mc-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .mc-btn {
+    padding: 16px 20px;
+    border-radius: 10px;
+    border: 2px solid var(--border);
+    background: var(--surface2);
+    color: var(--text);
+    font-size: 1.05rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: left;
+  }
+  .mc-btn:hover:not(:disabled) {
+    border-color: var(--accent);
+    background: rgba(245, 35, 35, 0.08);
+  }
+  .mc-btn.correct {
+    border-color: var(--green);
+    background: rgba(46,204,113,0.15);
+    color: var(--green);
+  }
+  .mc-btn.wrong {
+    border-color: var(--red);
+    background: rgba(231,76,60,0.12);
+    color: var(--red);
+  }
+  .mc-btn.reveal-correct {
+    border-color: var(--green);
+    background: rgba(46,204,113,0.08);
+    color: var(--green);
+  }
+
+  /* Typed input */
+  .typed-input-wrap { margin-bottom: 20px; }
+  .typed-input {
+    width: 100%;
+    background: var(--surface2);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 18px;
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1.1rem;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .typed-input:focus { border-color: var(--accent); }
+  .typed-input.correct { border-color: var(--green); background: rgba(46,204,113,0.08); }
+  .typed-input.wrong { border-color: var(--red); background: rgba(231,76,60,0.08); }
+
+  .submit-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--accent2);
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 14px;
+  }
+  .submit-btn:hover { opacity: 0.9; }
+  .submit-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+  .feedback-box {
+    padding: 14px 18px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+  .feedback-box.correct {
+    background: rgba(46,204,113,0.12);
+    border: 1px solid var(--green);
+    color: var(--green);
+  }
+  .feedback-box.wrong {
+    background: rgba(231,76,60,0.1);
+    border: 1px solid var(--red);
+    color: var(--red);
+  }
+
+  .next-btn {
+    width: 100%;
+    padding: 16px;
+    border-radius: 10px;
+    background: var(--surface3);
+    border: 2px solid var(--border);
+    color: var(--text);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .next-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ---- SUMMARY SCREEN ---- */
+  .summary-top {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 20px;
+    position: sticky; top: 0; z-index: 100;
+  }
+
+  .summary-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .stat-card {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 8px;
+    text-align: center;
+  }
+  .stat-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--accent);
+  }
+  .stat-lbl {
+    font-size: 0.65rem;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 3px;
+  }
+  .stat-card.green .stat-val { color: var(--green); }
+  .stat-card.red .stat-val { color: var(--red); }
+  .stat-card.blue .stat-val { color: var(--blue); }
+
+  .summary-btns {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  .summary-btns button { flex: 1; min-width: 120px; }
+
+  .summary-body { padding: 20px; max-width: 700px; margin: 0 auto; width: 100%; }
+
+  .summary-section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text2);
+    margin: 20px 0 10px;
+  }
+
+  .review-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+  }
+  .review-item.missed { border-left: 3px solid var(--red); }
+  .review-item.got-it { border-left: 3px solid var(--green); }
+
+  .review-item-q {
+    font-size: 0.9rem;
+    color: var(--text2);
+    margin-bottom: 4px;
+  }
+  .review-item-a {
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+    font-size: 1rem;
+  }
+  .review-item-correct {
+    font-size: 0.85rem;
+    color: var(--green);
+  }
+  .review-item-wrong {
+    font-size: 0.85rem;
+    color: var(--red);
+  }
+  .review-item-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .badge-wrong { background: rgba(231,76,60,0.15); color: var(--red); }
+  .badge-right { background: rgba(46,204,113,0.12); color: var(--green); }
+
+  /* ---- UTILITIES ---- */
+  .hidden { display: none !important; }
+  .mt-8 { margin-top: 8px; }
+  .mt-16 { margin-top: 16px; }
+
+  .end-quiz-row {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 20px 10px;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .pill-tag {
+    display: inline-block;
+    background: rgba(245, 35, 35, 0.12);
+    border: 1px solid rgba(245, 35, 35, 0.3);
+    color: var(--accent);
+    border-radius: 6px;
+    padding: 3px 10px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-right: 6px;
+  }
+
+  @media (max-width: 480px) {
+    .summary-stats { grid-template-columns: repeat(2, 1fr); }
+    .stat-val { font-size: 1.6rem; }
+    .question-text { font-size: 1.5rem; }
+    .seed-grid { grid-template-columns: repeat(5, 1fr); }
+    .mode-grid { grid-template-columns: 1fr 1fr 1fr; }
+  }
+
+  /* ---- UPDATE LABEL ---- */
+  .update-label {
+    font-size: 0.6rem;
+    color: var(--text3);
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+  }
+
+  /* ---- EDITOR SCREEN ---- */
+  #screen-editor { background: var(--bg); }
+
+  .editor-header {
+    background: var(--surface);
+    border-bottom: 2px solid var(--accent);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky; top: 0; z-index: 200;
+    gap: 12px;
+  }
+  .editor-header-left { display: flex; flex-direction: column; }
+  .editor-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 900;
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .editor-subtitle {
+    font-size: 0.65rem;
+    color: var(--text2);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .editor-header-btns {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .editor-header-btns button {
+    padding: 9px 16px;
+    border-radius: 8px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: 2px solid;
+    transition: all 0.15s;
+    white-space: nowrap;
+  }
+  .btn-export {
+    background: rgba(61,142,248,0.12);
+    border-color: var(--blue);
+    color: var(--blue);
+  }
+  .btn-export:hover { background: rgba(61,142,248,0.22); }
+  .btn-reset {
+    background: rgba(231,76,60,0.1);
+    border-color: var(--red);
+    color: var(--red);
+  }
+  .btn-reset:hover { background: rgba(231,76,60,0.2); }
+  .btn-editor-home {
+    background: var(--surface2);
+    border-color: var(--border);
+    color: var(--text2);
+  }
+  .btn-editor-home:hover { border-color: var(--text2); color: var(--text); }
+
+  /* Search bar */
+  .editor-search-wrap {
+    padding: 14px 20px 10px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 69px;
+    z-index: 190;
+  }
+  .editor-search {
+    width: 100%;
+    background: var(--surface2);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 16px 11px 40px;
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.15s;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%238892a8' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.099zm-5.242 1.656a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 13px center;
+  }
+  .editor-search:focus { border-color: var(--accent); }
+  .editor-search-count {
+    font-size: 0.72rem;
+    color: var(--text3);
+    text-align: right;
+    margin-top: 6px;
+    letter-spacing: 0.5px;
+  }
+
+  /* Editor list */
+  .editor-list { padding: 0 20px 100px; max-width: 800px; margin: 0 auto; width: 100%; }
+
+  .editor-cat-divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 24px 0 10px;
+  }
+  .editor-cat-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .editor-cat-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .editor-cat-count {
+    font-size: 0.7rem;
+    color: var(--text3);
+    white-space: nowrap;
+  }
+  .editor-add-btn {
+    background: rgba(46,204,113,0.1);
+    border: 1px dashed rgba(46,204,113,0.4);
+    color: var(--green);
+    border-radius: 8px;
+    padding: 9px 16px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  .editor-add-btn:hover { background: rgba(46,204,113,0.18); border-color: var(--green); }
+
+  /* Question row */
+  .editor-q-row {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 6px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+  }
+  .editor-q-row:hover { border-color: var(--border); }
+  .editor-q-row.expanded { border-color: var(--accent); }
+
+  .editor-q-summary {
+    display: flex;
+    align-items: center;
+    padding: 12px 14px;
+    cursor: pointer;
+    gap: 10px;
+    user-select: none;
+  }
+  .editor-q-summary:hover { background: rgba(255,255,255,0.02); }
+
+  .editor-q-text {
+    flex: 1;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.3;
+  }
+  .editor-q-answer {
+    font-size: 0.78rem;
+    color: var(--text2);
+    margin-top: 2px;
+  }
+  .editor-q-chevron {
+    color: var(--text3);
+    font-size: 0.8rem;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+  }
+  .editor-q-row.expanded .editor-q-chevron { transform: rotate(180deg); }
+
+  /* Inline edit panel (desktop) */
+  .editor-inline-panel {
+    display: none;
+    padding: 14px 16px 16px;
+    border-top: 1px solid var(--border);
+    background: var(--surface2);
+  }
+  .editor-q-row.expanded .editor-inline-panel { display: block; }
+
+  /* List dimming when row expanded (desktop only) */
+  @media (min-width: 600px) {
+    .editor-list.has-expanded .editor-q-row:not(.expanded) {
+      opacity: 0.38;
+      pointer-events: none;
+    }
+    .editor-list.has-expanded .editor-cat-divider {
+      opacity: 0.38;
+    }
+    .editor-list.has-expanded .editor-add-btn {
+      opacity: 0.38;
+      pointer-events: none;
+    }
+  }
+
+  /* Mobile overlay */
+  .editor-overlay-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 500;
+    backdrop-filter: blur(2px);
+  }
+  .editor-overlay-backdrop.open { display: flex; align-items: flex-end; }
+  @media (min-width: 600px) {
+    .editor-overlay-backdrop { display: none !important; }
+  }
+  .editor-overlay-panel {
+    background: var(--surface);
+    border-radius: 16px 16px 0 0;
+    border-top: 2px solid var(--accent);
+    width: 100%;
+    padding: 20px 20px 36px;
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+  .editor-overlay-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text2);
+    margin-bottom: 14px;
+  }
+
+  /* Shared edit form fields */
+  .edit-field-label {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text3);
+    margin-bottom: 5px;
+    margin-top: 12px;
+  }
+  .edit-field-label:first-child { margin-top: 0; }
+  .edit-text-input {
+    width: 100%;
+    background: var(--surface3);
+    border: 2px solid var(--border);
+    border-radius: 8px;
+    padding: 10px 14px;
+    color: var(--text);
+    font-family: 'Barlow', sans-serif;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.15s;
+  }
+  .edit-text-input:focus { border-color: var(--accent); }
+
+  /* Yes/No toggle for answer field */
+  .yn-toggle-wrap {
+    display: flex;
+    gap: 8px;
+    margin-top: 2px;
+  }
+  .yn-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid var(--border);
+    background: var(--surface3);
+    color: var(--text2);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .yn-btn.selected-yes { border-color: var(--green); color: var(--green); background: rgba(46,204,113,0.12); }
+  .yn-btn.selected-no  { border-color: var(--red);   color: var(--red);   background: rgba(231,76,60,0.1); }
+
+  /* Edit action buttons */
+  .edit-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .btn-save-edit {
+    flex: 1;
+    padding: 11px;
+    border-radius: 8px;
+    background: var(--accent);
+    color: #000;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .btn-save-edit:hover { opacity: 0.88; }
+  .btn-del-edit {
+    padding: 11px 16px;
+    border-radius: 8px;
+    background: rgba(231,76,60,0.1);
+    border: 2px solid var(--red);
+    color: var(--red);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-del-edit:hover { background: rgba(231,76,60,0.2); }
+  .btn-cancel-edit {
+    padding: 11px 16px;
+    border-radius: 8px;
+    background: var(--surface2);
+    border: 2px solid var(--border);
+    color: var(--text2);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-cancel-edit:hover { border-color: var(--text2); }
+
+  .editor-empty {
+    text-align: center;
+    color: var(--text3);
+    padding: 40px 20px;
+    font-size: 0.9rem;
+  }
+
+  /* Confirmation dialog */
+  .confirm-dialog-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+  }
+  .confirm-dialog-backdrop.open { display: flex; }
+  .confirm-dialog {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--red);
+    border-radius: 14px;
+    padding: 24px;
+    max-width: 340px;
+    width: 90%;
+  }
+  .confirm-dialog-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .confirm-dialog-msg {
+    font-size: 0.88rem;
+    color: var(--text2);
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  .confirm-dialog-btns { display: flex; gap: 10px; }
+  .confirm-dialog-btns button { flex: 1; }
+</style>
+</head>
+<body>
+
+<!-- ==================== HOME SCREEN ==================== -->
+<div id="screen-home" class="screen active">
+  <div class="header">
+    <div>
+      <div class="header-logo">PFD Training</div>
+      <div class="header-sub">Geography &amp; Hydrant Quiz</div>
+      <div class="update-label" id="update-label"></div>
+    </div>
+    <div class="streak-badge">
+      <div class="streak-fire">🔥</div>
+      <div>
+        <div class="streak-count" id="home-streak">0</div>
+        <div class="streak-label">Streak</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main">
+    <!-- SECTION 1: Categories -->
+    <div class="section-block">
+      <div class="section-number">Section 1</div>
+      <div class="section-title">Question Categories</div>
+      <div id="category-list">
+        <div class="category-row">
+          <div class="cat-info">
+            <div class="cat-name">Businesses &amp; Occupancies</div>
+            <div class="cat-count" id="count-businesses">Loading...</div>
+          </div>
+          <label class="toggle"><input type="checkbox" id="toggle-businesses" checked onchange="updateCounts()"><span class="toggle-slider"></span></label>
+        </div>
+        <div class="category-row">
+          <div class="cat-info">
+            <div class="cat-name">Neighborhoods</div>
+            <div class="cat-count" id="count-neighborhoods">Loading...</div>
+          </div>
+          <label class="toggle"><input type="checkbox" id="toggle-neighborhoods" checked onchange="updateCounts()"><span class="toggle-slider"></span></label>
+        </div>
+        <div class="category-row">
+          <div class="cat-info">
+            <div class="cat-name">Street Hydrants</div>
+            <div class="cat-count" id="count-street-hydrants">Loading...</div>
+          </div>
+          <label class="toggle"><input type="checkbox" id="toggle-street-hydrants" checked onchange="updateCounts()"><span class="toggle-slider"></span></label>
+        </div>
+        <div class="category-row">
+          <div class="cat-info">
+            <div class="cat-name">Neighborhood Hydrants</div>
+            <div class="cat-count" id="count-neighborhood-hydrants">Loading...</div>
+          </div>
+          <label class="toggle"><input type="checkbox" id="toggle-neighborhood-hydrants" checked onchange="updateCounts()"><span class="toggle-slider"></span></label>
+        </div>
+        <div class="category-row">
+          <div class="cat-info">
+            <div class="cat-name">Major Intersection Hydrants</div>
+            <div class="cat-count" id="count-intersection-hydrants">Loading...</div>
+          </div>
+          <label class="toggle"><input type="checkbox" id="toggle-intersection-hydrants" checked onchange="updateCounts()"><span class="toggle-slider"></span></label>
+        </div>
+        <div class="category-row">
+          <div class="cat-info">
+            <div class="cat-name">General Geography</div>
+            <div class="cat-count" id="count-geography">Loading...</div>
+          </div>
+          <label class="toggle"><input type="checkbox" id="toggle-geography" checked onchange="updateCounts()"><span class="toggle-slider"></span></label>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: Answer mode -->
+    <div class="section-block">
+      <div class="section-number">Section 2</div>
+      <div class="section-title">Answer Format</div>
+      <div class="mode-grid">
+        <button class="mode-btn selected" id="mode-typed" onclick="selectMode('typed')">Typed</button>
+        <button class="mode-btn" id="mode-mc" onclick="selectMode('mc')">Multiple Choice</button>
+        <button class="mode-btn" id="mode-both" onclick="selectMode('both')">Both</button>
+      </div>
+    </div>
+
+    <!-- SECTION 3: Question count -->
+    <div class="section-block">
+      <div class="section-number">Section 3</div>
+      <div class="section-title">Number of Questions</div>
+      <div class="preset-grid">
+        <button class="preset-btn" onclick="setCount(5)">5</button>
+        <button class="preset-btn" onclick="setCount(10)">10</button>
+        <button class="preset-btn" onclick="setCount(15)">15</button>
+        <button class="preset-btn" onclick="setCount(25)">25</button>
+        <button class="preset-btn" onclick="setCount(50)">50</button>
+      </div>
+      <input type="number" class="count-input" id="count-input" min="1" max="200" placeholder="Or type a number..." oninput="setCountCustom(this.value)">
+    </div>
+
+    <!-- SECTION 4: Seed -->
+    <div class="section-block">
+      <div class="section-number">Section 4</div>
+      <div class="section-title">Session Randomizer</div>
+      <div class="seed-grid" id="seed-grid">
+        <button class="seed-btn selected" onclick="selectSeed(1)">1</button>
+        <button class="seed-btn" onclick="selectSeed(2)">2</button>
+        <button class="seed-btn" onclick="selectSeed(3)">3</button>
+        <button class="seed-btn" onclick="selectSeed(4)">4</button>
+        <button class="seed-btn" onclick="selectSeed(5)">5</button>
+        <button class="seed-btn" onclick="selectSeed(6)">6</button>
+        <button class="seed-btn" onclick="selectSeed(7)">7</button>
+        <button class="seed-btn" onclick="selectSeed(8)">8</button>
+        <button class="seed-btn" onclick="selectSeed(9)">9</button>
+        <button class="seed-btn" onclick="selectSeed(10)">10</button>
+      </div>
+    </div>
+
+    <button class="btn-primary" id="start-btn" onclick="startQuiz()">Start Quiz</button>
+    <div style="height:30px"></div>
+  </div>
+</div>
+
+<!-- ==================== QUIZ SCREEN ==================== -->
+<div id="screen-quiz" class="screen">
+  <div class="quiz-header-bar">
+    <div class="quiz-progress-wrap">
+      <div class="quiz-progress-label">Question <span id="q-num">1</span> of <span id="q-total">10</span></div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="quiz-streak-live">
+      <span>🔥</span>
+      <div>
+        <div class="num" id="quiz-streak-num">0</div>
+        <div class="lbl">Streak</div>
+      </div>
+    </div>
+    <div class="quiz-score-live">
+      <span class="hits" id="quiz-correct">0</span> / <span id="quiz-answered">0</span>
+    </div>
+    <button class="btn-danger" style="font-size:0.85rem;padding:8px 14px;" onclick="confirmEndQuiz()">End Quiz</button>
+  </div>
+
+  <div class="quiz-body" id="quiz-body">
+    <!-- dynamically populated -->
+  </div>
+</div>
+
+<!-- ==================== SUMMARY SCREEN ==================== -->
+<div id="screen-summary" class="screen">
+  <div class="summary-top">
+    <div class="summary-stats">
+      <div class="stat-card green">
+        <div class="stat-val" id="sum-correct">0</div>
+        <div class="stat-lbl">Correct</div>
+      </div>
+      <div class="stat-card red">
+        <div class="stat-val" id="sum-wrong">0</div>
+        <div class="stat-lbl">Missed</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-val" id="sum-pct">0%</div>
+        <div class="stat-lbl">Score</div>
+      </div>
+      <div class="stat-card blue">
+        <div class="stat-val" id="sum-streak">0</div>
+        <div class="stat-lbl">Best Streak</div>
+      </div>
+    </div>
+    <div class="summary-btns">
+      <button class="btn-primary" style="font-size:1.1rem;padding:14px;" onclick="startReview()" id="review-btn">Review Missed</button>
+      <button class="btn-secondary" onclick="goHome()">Home</button>
+    </div>
+  </div>
+  <div class="summary-body" id="summary-body">
+    <!-- dynamically populated -->
+  </div>
+</div>
+
+<!-- ==================== REVIEW SCREEN ==================== -->
+<div id="screen-review" class="screen">
+  <div class="quiz-header-bar">
+    <div class="quiz-progress-wrap">
+      <div class="quiz-progress-label">Review <span id="rev-num">1</span> of <span id="rev-total">1</span></div>
+      <div class="progress-bar-bg"><div class="progress-bar-fill" id="rev-progress-fill" style="width:0%"></div></div>
+    </div>
+    <div class="quiz-streak-live">
+      <span>🔥</span>
+      <div>
+        <div class="num" id="rev-streak-num">0</div>
+        <div class="lbl">Streak</div>
+      </div>
+    </div>
+    <div class="quiz-score-live">
+      <span class="hits" id="rev-correct">0</span> / <span id="rev-answered">0</span>
+    </div>
+    <button class="btn-danger" style="font-size:0.85rem;padding:8px 14px;" onclick="endReview()">Exit Review</button>
+  </div>
+  <div class="quiz-body" id="review-body">
+    <!-- dynamically populated -->
+  </div>
+</div>
+
+<!-- ==================== EDITOR SCREEN ==================== -->
+<div id="screen-editor" class="screen">
+
+  <div class="editor-header">
+    <div class="editor-header-left">
+      <div class="editor-title">Question Editor</div>
+      <div class="editor-subtitle">Changes save automatically</div>
+    </div>
+    <div class="editor-header-btns">
+      <button class="btn-reset" onclick="editorResetToDefaults()">↺ Reset to Last Export</button>
+      <button class="btn-export" onclick="editorExport()">⬇ Export HTML</button>
+      <button class="btn-editor-home" onclick="editorGoHome()">← Home</button>
+    </div>
+  </div>
+
+  <div class="editor-search-wrap">
+    <input class="editor-search" id="editor-search" type="text" placeholder="Search questions or answers..." autocomplete="off" autocorrect="off" spellcheck="false" oninput="editorRenderList()">
+    <div class="editor-search-count" id="editor-search-count"></div>
+  </div>
+
+  <div class="editor-list" id="editor-list">
+    <!-- dynamically populated -->
+  </div>
+</div>
+
+<!-- Mobile overlay for editing -->
+<div class="editor-overlay-backdrop" id="editor-overlay-backdrop" onclick="editorOverlayBackdropClick(event)">
+  <div class="editor-overlay-panel" id="editor-overlay-panel">
+    <div class="editor-overlay-title" id="editor-overlay-title">Edit Question</div>
+    <div id="editor-overlay-form"></div>
+  </div>
+</div>
+
+<!-- Confirm dialog -->
+<div class="confirm-dialog-backdrop" id="confirm-dialog-backdrop">
+  <div class="confirm-dialog">
+    <div class="confirm-dialog-title" id="confirm-dialog-title">Are you sure?</div>
+    <div class="confirm-dialog-msg" id="confirm-dialog-msg"></div>
+    <div class="confirm-dialog-btns">
+      <button class="btn-cancel-edit" onclick="confirmDialogResolve(false)">Cancel</button>
+      <button class="btn-del-edit" id="confirm-dialog-ok" onclick="confirmDialogResolve(true)">Delete</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// DATA BANK
+// ============================================================
+
+const BUSINESSES = [
+  ["Williams Grocery","410 Piedmont Rd S"],
+  ["Nance Precast","5601 Washington Ave E"],
+  ["Cloud Meds","210 Piedmont Rd N"],
+  ["Piedmont Community Park","130 Gooder Simpson Blvd"],
+  ["Leach Automotive","107 Madison Ave NE"],
+  ["RB Bearinger","320 Piedmont Rd N"],
+  ["Sharps BBQ","83 Monroe Ave NE"],
+  ["Dollar Tree","750 Piedmont Rd N"],
+  ["West View Church of Christ","175 Gooder Simpson Blvd"],
+  ["Life Gym","1432 Piedmont Rd N"],
+  ["La Herencia Mexican Grill","1430 Piedmont Rd N"],
+  ["Piedmont Pharmacy","97 Gooder Simpson Blvd"],
+  ["Piedmont Family Health","63 Gooder Simpson Blvd"],
+  ["Piedmont Vision","51 Gooder Simpson Blvd C"],
+  ["Piedmont Dental","51 Gooder Simpson Blvd A"],
+  ["Dollar General","1468 Piedmont Rd N"],
+  ["Sybills Diner","246 Edmond Rd NE"],
+  ["Chicos Mexican Restaurant","256 Edmond Rd NE"],
+  ["Phoenix Asian Cuisine","318 Edmond Rd NE"],
+  ["CZAR Athletics","324 Edmond Rd NE"],
+  ["Bridge Church","4050 Edmond Rd NE"],
+  ["Dolese Bros","6013 Edmond Rd NE"],
+  ["White Fields","7127 County Line Rd NE"],
+  ["Piedmont Intermediate School","977 Washington Ave NW"],
+  ["Farmers Insurance","104 Piedmont Rd N"],
+  ["Piedmont Chiropractic","325 Piedmont Rd N"],
+  ["Old Store","100 Monroe Ave NW"],
+  ["Soldier Creek Church of Christ","415 Monroe Ave NW"],
+  ["Piedmont Historical Museum","101 Monroe Ave NW"],
+  ["TWD Shirt Company","115 Monroe Ave NW"],
+  ["Piedmont Post Office","112 Jackson Ave NW"],
+  ["Piedmont Cuisine","91 Monroe Ave NW"],
+  ["City Stop","410 Piedmont Rd N"],
+  ["Wildcat Stop","407 Piedmont Rd N"],
+  ["Piedmont Tag","414 Piedmont Rd N"],
+  ["Piedmont Baptist Church","15 Jackson Ave NW"],
+  ["Piedmont Middle School","823 2nd St NW"],
+  ["Piedmont Football Complex","917 Piedmont Rd N"],
+  ["Piedmont Library","1129 Stout Dr NW"],
+  ["Piedmont Elementary School","1011 Piedmont Rd N"],
+  ["ECI D&K Art Studio","1213 Piedmont Rd N"],
+  ["Hometown Hardware","1275 Piedmont Rd N"],
+  ["Sonic","1317 Piedmont Rd N"],
+  ["Subway","1527 Piedmont Rd N"],
+  ["PAVA Event Center","170 Edmond Rd NW"],
+  ["Emerald Fire Meds","1411 Douglas NW"],
+  ["Caseys","1683 Piedmont Rd N"],
+  ["MPH Automotive","141 Edmond Rd NW"],
+  ["Freedom Church","591 Edmond Rd NW"],
+  ["Piedmont Learning Center","615 Edmond Rd NW"],
+  ["Piedmont High School","1055 Edmond Rd NW"],
+  ["DCX Allstars","1841 Piedmont Rd N"],
+  ["Champion Driving School","1885 Piedmont Rd N"],
+  ["Epic Charter Schools","1885 Piedmont Rd N"],
+  ["Piedmont Church of the Nazarene","2011 Piedmont Rd N"],
+  ["Piedmont Methodist Church","2525 Piedmont Rd N"],
+  ["Chesters Party Barn","5201 Cimarron Rd NW"],
+  ["Wildcatter Whiskey and Wine","156 Edmond Rd NW Suite 104"],
+  ["Fire Station 1","314 Edmond Rd NW"],
+  ["Police Station","400 Edmond Rd NW"],
+];
+
+// Fabricated addresses for wrong MC answers (real street names, fake numbers)
+const FAKE_ADDRESSES = [
+  "412 Edmond Rd NW","201 Piedmont Rd N","558 Monroe Ave NW","740 Jackson Ave NW",
+  "1050 Gooder Simpson Blvd","332 Madison Ave NE","875 Stout Dr NW","620 Washington Ave NW",
+  "1200 Piedmont Rd N","443 Monroe Ave NE","888 Edmond Rd NE","2200 Piedmont Rd N",
+  "76 Gooder Simpson Blvd","900 2nd St NW","1550 Edmond Rd NW","380 Piedmont Rd S",
+  "2800 Edmond Rd NE","150 Jackson Ave NW","500 Madison Ave NE","1100 Stout Dr NW",
+  "3500 Edmond Rd NE","680 Monroe Ave NW","270 Piedmont Rd N","4500 Cimarron Rd NW",
+  "720 Washington Ave NW","1750 Piedmont Rd N","88 Monroe Ave NE","350 Edmond Rd NW",
+];
+
+const NEIGHBORHOODS_14 = [
+  "Coyotee Springs","Windmill Park","Skyline","Olde Town","Vails Ranchette","Circle V",
+  "Magnolia Meadows","Town Central","Rolling Prairie","The Oaks","Shenandoah",
+  "Emerald Pointe","Golden Hills","Winding Creek"
+];
+
+const NEIGHBORHOOD_INTERSECTIONS = {
+  "Town Central": "178th & Piedmont Rd",
+  "Windmill Park": "178th & Piedmont Rd",
+  "Shenandoah": "178th & Morgan Rd",
+  "Golden Hills": "178th & Cemetery Rd",
+  "Coyotee Springs": "178th & Sara Rd",
+  "Circle V": "192nd & Sara Rd",
+  "Skyline": "164th & Cemetery Rd",
+  "Eastwind": "164th & Sara Rd",
+  "Emerald Pointe": "164th & Sara Rd",
+  "Magnolia Meadows": "164th & Morgan Rd",
+  "Rolling Prairie": "164th & Mustang Rd",
+  "Olde Town": "164th & Cemetery Rd",
+  "Vails Ranchette": "192nd & Piedmont Rd",
+  "The Oaks": "178th & Sara Rd",
+  "Winding Creek": "178th & Sara Rd",
+};
+
+// Neighborhoods with hydrants (yes) vs no hydrants
+const NEIGHBORHOODS_WITH_HYDRANTS = ["Coyotee Springs","Windmill Park","Town Central","Circle V","The Oaks","Winding Creek","Eastwind","Emerald Pointe","Golden Hills","Shenandoah","Olde Town","Skyline","Rolling Prairie","Magnolia Meadows"];
+const NEIGHBORHOODS_NO_HYDRANTS = ["Vails Ranchette"];
+
+// Streets WITH neighborhoods
+const STREETS_WITH_HOOD = [
+  ["Acorn Bend","178th & Piedmont Rd","Town Central"],
+  ["Adraina Way","178th & Morgan Rd","Shenandoah"],
+  ["Amanda Ct","164th & Sara Rd","Eastwind"],
+  ["Amy Ct","164th & Sara Rd","Eastwind"],
+  ["Angela Cir","164th & Sara Rd","Eastwind"],
+  ["Angela Ct","164th & Sara Rd","Eastwind"],
+  ["Antelope St","164th & Mustang Rd","Rolling Prairie"],
+  ["Ashley Ct","164th & Sara Rd","Eastwind"],
+  ["Aspen Cir","178th & Piedmont Rd","Windmill Park"],
+  ["Auburn Cir","178th & Piedmont Rd","Town Central"],
+  ["Auburn Ct","178th & Piedmont Rd","Town Central"],
+  ["Auburn Ln","178th & Piedmont Rd","Town Central"],
+  ["Badger St","164th & Mustang Rd","Rolling Prairie"],
+  ["Bethany Dr","164th & Sara Rd","Eastwind"],
+  ["Birch Ave","178th & Piedmont Rd","Windmill Park"],
+  ["Boevers Way","178th & Morgan Rd","Shenandoah"],
+  ["Bridal Path","192nd & Piedmont Rd","Vails Ranchette"],
+  ["Buchanan Ave","178th & Cemetery Rd","Golden Hills"],
+  ["Burlwood Ln","178th & Piedmont Rd","Town Central"],
+  ["Caleb Dr","164th & Sara Rd","Eastwind"],
+  ["Candice Dr","178th & Cemetery Rd","Skyline"],
+  ["Carrie Ln","178th & Cemetery Rd","Skyline"],
+  ["Cedar Cir","178th & Piedmont Rd","Windmill Park"],
+  ["Chestnut Canyon","178th & Piedmont Rd","Town Central"],
+  ["Chestnut Cir","178th & Piedmont Rd","Windmill Park"],
+  ["Chuck Wagon","192nd & Sara Rd","Circle V"],
+  ["Cindy Ct","178th & Cemetery Rd","Skyline"],
+  ["Copper Hill Ct","178th & Sara Rd","Emerald Pointe"],
+  ["Copper Ridge Cir","178th & Piedmont Rd","Town Central"],
+  ["Covered Wagon Trl","192nd & Sara Rd","Circle V"],
+  ["Coyote Run","178th & Sara Rd","Coyotee Springs"],
+  ["Coyotee Cir","178th & Sara Rd","Coyotee Springs"],
+  ["Cypress St","178th & Piedmont Rd","Windmill Park"],
+  ["Deer Brook Cir","178th & Sara Rd","Coyotee Springs"],
+  ["Deer Brook Trl","178th & Sara Rd","Coyotee Springs"],
+  ["Diamond Ct","164th & Morgan Rd","Magnolia Meadows"],
+  ["East Ridge Cir","178th & Sara Rd","Emerald Pointe"],
+  ["Elk Dr","164th & Mustang Rd","Rolling Prairie"],
+  ["Elm St","178th & Piedmont Rd","Windmill Park"],
+  ["Faint Ridge","192nd & Sara Rd","Circle V"],
+  ["Faint Ridge Way","192nd & Sara Rd","Circle V"],
+  ["Fillmore Ave","178th & Cemetery Rd","Golden Hills"],
+  ["Golden Hills Ln","178th & Cemetery Rd","Golden Hills"],
+  ["Gooder Simpson Blvd","178th & Piedmont Rd","Town Central"],
+  ["Green Gulch Run","178th & Sara Rd","Coyotee Springs"],
+  ["Harold Dr","164th & Sara Rd","Eastwind"],
+  ["Harvest Elm","178th & Piedmont Rd","Town Central"],
+  ["Hickory Cir","178th & Piedmont Rd","Windmill Park"],
+  ["Hickory Trl","178th & Piedmont Rd","Town Central"],
+  ["Horseshoe Bend","192nd & Piedmont Rd","Vails Ranchette"],
+  ["Johnson Ave","178th & Cemetery Rd","Golden Hills"],
+  ["Katlyn Pass","178th & Morgan Rd","Shenandoah"],
+  ["Korie Cove","178th & Morgan Rd","Shenandoah"],
+  ["Kyle Trail","178th & Morgan Rd","Shenandoah"],
+  ["Lariet Dr","192nd & Piedmont Rd","Vails Ranchette"],
+  ["Layton Way","178th & Morgan Rd","Shenandoah"],
+  ["Lincoln Ave","178th & Cemetery Rd","Golden Hills"],
+  ["Locust Grove Run","178th & Sara Rd","Coyotee Springs"],
+  ["Longhorn Dr","164th & Mustang Rd","Eastwind"],
+  ["Mahogany Ln","178th & Piedmont Rd","Town Central"],
+  ["Makenzie Trail","178th & Morgan Rd","Shenandoah"],
+  ["Mark Circle","178th & Morgan Rd","Shenandoah"],
+  ["Maverick Pass","178th & Morgan Rd","Shenandoah"],
+  ["Mimosa Cir","178th & Piedmont Rd","Windmill Park"],
+  ["Misty Dr","178th & Cemetery Rd","Skyline"],
+  ["Moose St","164th & Mustang Rd","Rolling Prairie"],
+  ["Oak Cir NW","178th & Piedmont Rd","Windmill Park"],
+  ["Oaks Ter NE","178th & Sara Rd","Coyotee Springs"],
+  ["Old Wagon","192nd & Sara Rd","Circle V"],
+  ["Olde Town Ct","164th & Cemetery Rd","Olde Town"],
+  ["Olde Town Dr","164th & Cemetery Rd","Olde Town"],
+  ["Orchid Ct","164th & Morgan Rd","Magnolia Meadows"],
+  ["Painted Wagon Cir","192nd & Sara Rd","Circle V"],
+  ["Paris Ave","164th & Morgan Rd","Magnolia Meadows"],
+  ["Parker Mill Trail","192nd & Sara Rd","Circle V"],
+  ["Parker Ridge","192nd & Sara Rd","Circle V"],
+  ["Paulette Dr","178th & Cemetery Rd","Skyline"],
+  ["Peony Cir","164th & Morgan Rd","Magnolia Meadows"],
+  ["Phils Way","178th & Cemetery Rd","Skyline"],
+  ["Pierce Ave","178th & Cemetery Rd","Golden Hills"],
+  ["Pineridge Cir","178th & Piedmont Rd","Town Central"],
+  ["Plumeria Ct","164th & Morgan Rd","Magnolia Meadows"],
+  ["Poplar Ave","178th & Piedmont Rd","Windmill Park"],
+  ["Primrose Point Ave","164th & Morgan Rd","Magnolia Meadows"],
+  ["Raymond Ln","178th & Cemetery Rd","Skyline"],
+  ["Redbud Cir","178th & Piedmont Rd","Windmill Park"],
+  ["Red Oak Ln","178th & Piedmont Rd","Town Central"],
+  ["Reta Cir","164th & Morgan Rd","Magnolia Meadows"],
+  ["Richas Way","178th & Sara Rd","Emerald Pointe"],
+  ["Ridgeview Ln","178th & Sara Rd","Emerald Pointe"],
+  ["Rocky Top Cir","178th & Sara Rd","Coyotee Springs"],
+  ["Ruby Ridge","192nd & Sara Rd","Circle V"],
+  ["Saddle Springs Trl","192nd & Sara Rd","Circle V"],
+  ["Sienna Creek Ln","178th & Piedmont Rd","Town Central"],
+  ["Silver Crossings Cir","178th & Sara Rd","Emerald Pointe"],
+  ["Smokey Bend Ridge","192nd & Sara Rd","Circle V"],
+  ["South Ridge Ln","178th & Sara Rd","Emerald Pointe"],
+  ["Spur Cir","192nd & Piedmont Rd","Vails Ranchette"],
+  ["Spur Dr","192nd & Piedmont Rd","Vails Ranchette"],
+  ["Starlight Terr","178th & Cemetery Rd","Golden Hills"],
+  ["Stephany Dr","164th & Sara Rd","Eastwind"],
+  ["Steven Dr","178th & Cemetery Rd","Skyline"],
+  ["Sycamore Ave","178th & Piedmont Rd","Windmill Park"],
+  ["Tawny Hills","178th & Piedmont Rd","Town Central"],
+  ["Topaz Meadows Ct","178th & Sara Rd","Emerald Pointe"],
+  ["Turkey Hollow Trl","178th & Sara Rd","Coyotee Springs"],
+  ["Umber Way","178th & Piedmont Rd","Town Central"],
+  ["Venetian Ave","164th & Morgan Rd","Magnolia Meadows"],
+  ["Wagonwheel","192nd & Piedmont Rd","Vails Ranchette"],
+  ["Wagonwheel Cir","192nd & Piedmont Rd","Vails Ranchette"],
+  ["Wagon Train Cir","192nd & Sara Rd","Circle V"],
+  ["Walnut Brook","178th & Piedmont Rd","Town Central"],
+  ["Windmill Blvd","178th & Piedmont Rd","Windmill Park"],
+];
+
+// Streets WITHOUT neighborhood
+const STREETS_NO_HOOD = [
+  ["Abby Ln NE","220th & Sara Rd"],
+  ["Abney SW","164th & Richland Rd"],
+  ["Akeman Dr","234th & Sara Rd"],
+  ["Andy Ave","206th & Cemetery Rd"],
+  ["Avondale Ln","234th & Sara Rd"],
+  ["Bella Cir","178th & Richland Rd"],
+  ["Blugil Dr","178th & Mustang Rd"],
+  ["Bobcat Dr","234th & Sara Rd"],
+  ["Buena Vista","206th & County Line Rd"],
+  ["Callahan Way","248th & County Line Rd"],
+  ["Campbell Ln","234th & County Line Rd"],
+  ["Canyon View Dr","206th & Frisco Rd"],
+  ["Carolina Ct","234th & Sara Rd"],
+  ["Cedar Valley","164th & Cimarron Rd"],
+  ["Chesapeake Ln","234th & Sara Rd"],
+  ["Cheyenne Way","192nd & Piedmont Rd"],
+  ["Chisholm Ln","178th & County Line Rd"],
+  ["Cobalt Ct","206th & Frisco Rd"],
+  ["Cole Way","220th & County Line Rd"],
+  ["Craig Dr","178th & Piedmont Rd"],
+  ["Daisy Dr","248th & County Line Rd"],
+  ["Daybreak Ct","206th & Frisco Rd"],
+  ["Dickerson Ln","248th & Mustang Rd"],
+  ["Douglas Blvd","178th & Frisco Rd"],
+  ["Duboise","206th & Frisco Rd"],
+  ["Eagle Dr","234th & Sara Rd"],
+  ["East Trail Dr","192nd & Cemetery Rd"],
+  ["Elements Dr","234th & Sara Rd"],
+  ["Every Ave","220th & Piedmont Rd"],
+  ["Falcon Dr","248th & Sara Rd"],
+  ["Fawn Creek Ct","178th & Sara Rd"],
+  ["Fina Dr","206th & Cemetery Rd"],
+  ["Golden Brook Ln","178th & Sara Rd"],
+  ["Grant Dr","248th & Richland Rd"],
+  ["Greenwood Dr","150th & Mustang Rd"],
+  ["Hall","206th & Frisco Rd"],
+  ["Hammond","234th & Cemetery Rd"],
+  ["Hart Dr","206th & Mustang Rd"],
+  ["Hawk Dr","234th & Sara Rd"],
+  ["Heritage Ln","220th & Piedmont Rd"],
+  ["High Meadows Ln","234th & Cemetery Rd"],
+  ["Hudson Ln","248th & County Line Rd"],
+  ["Hummingbird Ln","178th & Cemetery Rd"],
+  ["Hunter Ridge","234th & Cemetery Rd"],
+  ["Jane Cir","164th & Mustang Rd"],
+  ["Koerner Dr","192nd & Morgan Rd"],
+  ["Lake Dr","248th & Sara Rd"],
+  ["Linton Ln","220th & Piedmont Rd"],
+  ["Log Cabin","234th & Cemetery Rd"],
+  ["Longview Dr","164th & Richland Rd"],
+  ["Lorraine Dr","234th & Cemetery Rd"],
+  ["Maryanna","178th & Mustang Rd"],
+  ["Matt Dr","192nd & Morgan Rd"],
+  ["Meadowlark St","178th & Mustang Rd"],
+  ["Merlon Ln","234th & Morgan Rd"],
+  ["North Trail Dr","192nd & Cemetery Rd"],
+  ["Northridge Ln","220th & Mustang Rd"],
+  ["Polk Ave","178th & Stout Dr"],
+  ["Polk Place","178th & Stout Dr"],
+  ["Ranch Dr","220th & Sara Rd"],
+  ["Raven Dr","234th & Sara Rd"],
+  ["Red Valley Dr","206th & Frisco Rd"],
+  ["Ridge","220th & Piedmont Rd"],
+  ["Rock Cliff Cir","234th & Piedmont Rd"],
+  ["Rock Cliff Way","234th & Piedmont Rd"],
+  ["Rolling Ct","178th & Piedmont Rd"],
+  ["Ryan Dr","192nd & Cemetery Rd"],
+  ["Shasta Dr","248th & County Line Rd"],
+  ["Shevlin Ln","206th & Sara Rd"],
+  ["Shirley Ln","164th & Sara Rd"],
+  ["Skyler Ridge","178th & County Line Rd"],
+  ["Slaton Cir","206th & Sara Rd"],
+  ["Starry Night Dr","220th & Morgan Rd"],
+  ["Stephanie Ln","178th & Mustang Rd"],
+  ["Stone Ave","206th & Sara Rd"],
+  ["Strod Cir","248th & Sara Rd"],
+  ["Strod Ct","248th & Sara Rd"],
+  ["Sue Cir","164th & Mustang Rd"],
+  ["Sundance Dr","248th & County Line Rd"],
+  ["Sunflower","178th & Piedmont Rd"],
+  ["Susanna","178th & Mustang Rd"],
+  ["Taylor Ave","178th & Stout Dr"],
+  ["Terrace Hills Dr","206th & Richland Rd"],
+  ["Terry Ln","206th & Sara Rd"],
+  ["Tilton Trl","206th & Morgan Rd"],
+  ["Tracy Ln","220th & Sara Rd"],
+  ["Traditions Dr","234th & Sara Rd"],
+  ["Trails End","206th & Morgan Rd"],
+  ["Treece Dr","192nd & Mustang Rd"],
+  ["Turkey Creek Ln","178th & Sara Rd"],
+  ["Tuscany Way","248th & Piedmont Rd"],
+  ["Tyler Ave","178th & Stout Dr"],
+  ["Vandiver SW","164th & Richland Rd"],
+  ["Via Arezzo","234th & County Line Rd"],
+  ["West","220th & Morgan Rd"],
+  ["Whispering Creek Ct","178th & Sara Rd"],
+  ["Wildcat Way","178th & Piedmont Rd"],
+  ["Wilson Dr","220th & Sara Rd"],
+  ["Winding Creek","178th & Sara Rd"],
+  ["Wolf Lake Dr","234th & Sara Rd"],
+  ["Zella Way","192nd & Morgan Rd"],
+];
+
+// Street Hydrant data (streets that have YES hydrants - not deficient)
+// Based on Hydrant Index 2026
+const STREETS_WITH_HYDRANTS = [
+  "Tuscany Way","Traditions Dr","Wolf Lake Dr","Rock Cliff Cir","Terrace Hills Dr",
+  "Arrowhead NW","North Trail","East Trail","Douglas Blvd","Edmond Rd NW",
+  "Johnson Ave","Lincoln Ave","Fillmore Ave","Pierce Ave","Phils Way",
+  "Birch Ave","Elm St","Oak Cir NW","Cypress St","Cedar Cir","Aspen Cir",
+  "Sycamore Ave","Redbud Cir","Poplar Ave","Windmill Blvd","Hickory Cir",
+  "Mimosa Cir","Chestnut Cir","Rolling Ct","Craig Dr",
+  "Mustang Rd","Edmond Rd NE","Piedmont Rd N",
+  "Chuck Wagon","Painted Wagon Cir","Parker Ridge","Parker Mill Trail",
+  "Ruby Ridge","Faint Ridge Way","Faint Ridge","Covered Wagon Trl","Saddle Springs Trl",
+  "Smokey Bend Ridge","Old Wagon","Coyote Run","Green Gulch Run","Coyotee Cir",
+  "Deer Brook Trl","Deer Brook Cir","Locust Grove Run","Rocky Top Cir","Turkey Hollow Trl",
+  "Winding Creek","Turkey Creek Ln","Copper Hill Ct","Silver Crossings Cir",
+  "Topaz Meadows Ct","Richas Way","East Ridge Cir","South Ridge Ln","Ridgeview Ln",
+  "Primrose Point Ave","Peony Cir","Orchid Ct","Plumeria Ct","Venetian Ave","Reta Cir",
+  "Paris Ave","Diamond Ct","Harold Dr","Bethany Dr","Stephany Dr","Caleb Dr",
+  "Amy Ct","Amanda Ct","Shirley Ln","Angela Ct","Angela Cir","Ashley Ct",
+  "Elk Dr","Moose St","Antelope St","Sue Cir","Olde Town Ct","Olde Town Dr",
+  "Candice Dr","Carrie Ln","Misty Dr","Raymond Ln","Cindy Ct","Steven Dr","Paulette Dr",
+  "Gooder Simpson Blvd","Auburn Cir","Auburn Ln","Hickory Trl","Acorn Bend","Pineridge Cir",
+  "Umber Way","Harvest Elm","Chestnut Canyon","Copper Ridge Cir","Sienna Creek Ln",
+  "Tawny Hills","Walnut Brook","Mahogany Ln","Red Oak Ln","Almond Blossom","Burlwood Ln",
+  "Starlight Terr","Buchanan Ave","Golden Hills Ln",
+  "Van Buren NW","Monroe NW","Monroe Ave NW","Jefferson NW","Adams NW","Taylor NW",
+  "Polk NW","Harrison NW","Washington NW","Washington Ave NW","Stout Dr","Olde Town Ct",
+  "Cedar Valley","Cimarron Rd NW","Richland Rd NW",
+  "Makenzie Trail","Maverick Pass","Adraina Way","Boevers Way","Korie Cove",
+  ["Kyle Trail","private"]
+];
+
+// Streets with NO valid hydrants (some are excluded due to deficiency)
+const STREETS_NO_HYDRANTS = [
+  "Cheyenne Way","Koerner Dr","Matt Dr","Zella Way","Merlon Ln","Starry Night Dr",
+  "Every Ave","Heritage Ln","Linton Ln","Ridge","Abby Ln NE","Tracy Ln","Wilson Dr",
+  "Ranch Dr","Cole Way","Callahan Way","Campbell Ln","Hudson Ln","Shasta Dr","Sundance Dr",
+  "Daisy Dr","Via Arezzo","Skyler Ridge","Chisholm Ln","Buena Vista",
+  "Canyon View Dr","Cobalt Ct","Daybreak Ct","Duboise","Hall","Red Valley Dr",
+  "Hart Dr","Northridge Ln","Slaton Cir","Shevlin Ln","Stone Ave","Terry Ln","Tilton Trl",
+  "Trails End","Fawn Creek Ct","Golden Brook Ln","Whispering Creek Ct","Wagon Train Cir",
+  "Maryanna","Meadowlark St","Susanna","Stephanie Ln","Blugil Dr","Jane Cir",
+  "Polk Ave","Polk Place","Taylor Ave","Tyler Ave","Falcon Dr","Lake Dr","Strod","Strod Cir",
+  "Tuscany Way",// special note - 2.5 only
+  "Dickerson Ln","Grant Dr","Vandiver SW","Abney SW","Longview Dr",
+  "Hammond","High Meadows Ln","Log Cabin","Lorraine Dr","Hunter Ridge",
+  "Eagle Dr","Elements Dr","Bobcat Dr","Raven Dr","Hawk Dr","Chesapeake Ln",
+  "Avondale Ln","Carolina Ct","Akeman Dr","Traditions Dr","Rock Cliff Way",
+];
+
+// Intersection hydrant data
+const INTERSECTIONS_YES = [
+  "150th & Piedmont Rd","164th & Cemetery Rd","164th & Cimarron Rd","164th & Richland Rd",
+  "164th & Piedmont Rd","178th & Cemetery Rd","178th & Mustang Rd","178th & Piedmont Rd",
+  "178th & Sara Rd","178th & Richland Rd","192nd & Mustang Rd","192nd & Sara Rd",
+  "206th & Cemetery Rd","206th & Morgan Rd","220th & Morgan Rd","234th & Cemetery Rd",
+  "234th & Piedmont Rd","192nd & Cemetery Rd","192nd & Cimarron Rd",
+];
+const INTERSECTIONS_NO = [
+  "178th & Frisco Rd","178th & Morgan Rd","178th & Gregory Rd","178th & County Line Rd",
+  "220th & Cemetery Rd","220th & Mustang Rd","206th & Mustang Rd","234th & Sara Rd",
+  "234th & Morgan Rd",
+];
+
+// ============================================================
+// SEEDED RNG
+// ============================================================
+function mulberry32(seed) {
+  return function() {
+    seed |= 0; seed = seed + 0x6D2B79F5 | 0;
+    var t = Math.imul(seed ^ seed >>> 15, 1 | seed);
+    t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+    return ((t ^ t >>> 14) >>> 0) / 4294967296;
+  }
+}
+
+// ============================================================
+// STATE
+// ============================================================
+let state = {
+  streak: 0,
+  quizQuestions: [],
+  currentQ: 0,
+  correct: 0,
+  answered: 0,
+  bestStreak: 0,
+  sessionStreak: 0,
+  questionLog: [],
+  answerMode: 'typed',
+  totalQ: 10,
+  seed: 1,
+  enabledCategories: {
+    businesses: true,
+    neighborhoods: true,
+    'street-hydrants': true,
+    'neighborhood-hydrants': true,
+    'intersection-hydrants': true,
+    geography: true,
+  },
+  missedQuestions: [],
+  isReview: false,
+  reviewQuestions: [],
+  reviewIdx: 0,
+  reviewCorrect: 0,
+  reviewAnswered: 0,
+  reviewStreak: 0,
+};
+
+function getStreak() {
+  return parseInt(localStorage.getItem('pfd_streak') || '0');
+}
+function setStreakLS(v) {
+  localStorage.setItem('pfd_streak', v);
+}
+
+// ============================================================
+// QUESTION BANK GENERATION
+// ============================================================
+
+function buildBusinessQuestions() {
+  const qs = [];
+  for (const [name, addr] of BUSINESSES) {
+    // name-to-address
+    qs.push({
+      category: 'businesses',
+      type: 'name-to-addr',
+      question: `What is the address of ${name}?`,
+      answer: addr,
+      mcType: 'address',
+      mcPool: () => getAddressDistractors(addr),
+    });
+    // address-to-name
+    qs.push({
+      category: 'businesses',
+      type: 'addr-to-name',
+      question: `What is at ${addr}?`,
+      answer: name,
+      mcType: 'name',
+      mcPool: () => getNameDistractors(name, addr),
+    });
+  }
+  return qs;
+}
+
+function getAddressDistractors(correctAddr) {
+  // Mix of real addresses and fake ones
+  const real = BUSINESSES.map(b => b[1]).filter(a => a !== correctAddr);
+  const all = [...real, ...FAKE_ADDRESSES].filter(a => a !== correctAddr);
+  return shuffle3(all).slice(0, 3);
+}
+
+function getNameDistractors(correctName, correctAddr) {
+  // Names of OTHER businesses (not sharing same address)
+  const others = BUSINESSES
+    .filter(b => b[0] !== correctName && b[1] !== correctAddr)
+    .map(b => b[0]);
+  return shuffle3(others).slice(0, 3);
+}
+
+function buildNeighborhoodQuestions() {
+  const qs = [];
+  // closest intersection for each neighborhood
+  for (const [hood, intersection] of Object.entries(NEIGHBORHOOD_INTERSECTIONS)) {
+    qs.push({
+      category: 'neighborhoods',
+      type: 'hood-to-intersection',
+      question: `What is the closest major intersection to ${hood}?`,
+      answer: intersection,
+      mcType: 'intersection',
+      mcPool: () => getIntersectionDistractors(intersection),
+    });
+  }
+  // neighborhood hydrant presence
+  for (const hood of NEIGHBORHOODS_WITH_HYDRANTS) {
+    qs.push({
+      category: 'neighborhoods',
+      type: 'hood-hydrant-yn',
+      question: `Are there fire hydrants in ${hood}?`,
+      answer: 'yes',
+      mcType: 'yesno',
+      mcPool: () => ['yes','no'],
+    });
+  }
+  for (const hood of NEIGHBORHOODS_NO_HYDRANTS) {
+    qs.push({
+      category: 'neighborhoods',
+      type: 'hood-hydrant-yn',
+      question: `Are there fire hydrants in ${hood}?`,
+      answer: 'no',
+      mcType: 'yesno',
+      mcPool: () => ['yes','no'],
+    });
+  }
+  return qs;
+}
+
+const ALL_INTERSECTIONS_MC = [
+  "178th & Piedmont Rd","178th & Sara Rd","178th & Cemetery Rd","178th & Morgan Rd",
+  "178th & Mustang Rd","164th & Sara Rd","164th & Cemetery Rd","164th & Mustang Rd",
+  "164th & Morgan Rd","164th & Richland Rd","192nd & Sara Rd","192nd & Piedmont Rd",
+  "192nd & Cemetery Rd","206th & Richland Rd","206th & Cemetery Rd","206th & Morgan Rd",
+  "220th & Morgan Rd","220th & Piedmont Rd","234th & Piedmont Rd","234th & Cemetery Rd",
+  "150th & Piedmont Rd","192nd & Mustang Rd","164th & Piedmont Rd","178th & Richland Rd",
+];
+
+function getIntersectionDistractors(correct) {
+  return shuffle3(ALL_INTERSECTIONS_MC.filter(i => i !== correct)).slice(0, 3);
+}
+
+function buildStreetHydrantQuestions() {
+  const qs = [];
+  for (const s of STREETS_WITH_HYDRANTS) {
+    if (Array.isArray(s)) continue; // skip private
+    qs.push({
+      category: 'street-hydrants',
+      type: 'street-hydrant-yn',
+      question: `Are there fire hydrants on ${s}?`,
+      answer: 'yes',
+      mcType: 'yesno',
+      mcPool: () => ['yes','no'],
+    });
+  }
+  for (const s of STREETS_NO_HYDRANTS) {
+    qs.push({
+      category: 'street-hydrants',
+      type: 'street-hydrant-yn',
+      question: `Are there fire hydrants on ${s}?`,
+      answer: 'no',
+      mcType: 'yesno',
+      mcPool: () => ['yes','no'],
+    });
+  }
+  return qs;
+}
+
+function buildNeighborhoodHydrantQuestions() {
+  // Same as neighborhood hydrant questions but standalone category
+  const qs = [];
+  for (const hood of NEIGHBORHOODS_WITH_HYDRANTS) {
+    qs.push({
+      category: 'neighborhood-hydrants',
+      type: 'nbhood-hydrant-yn',
+      question: `Are there fire hydrants in ${hood}?`,
+      answer: 'yes',
+      mcType: 'yesno',
+      mcPool: () => ['yes','no'],
+    });
+  }
+  for (const hood of NEIGHBORHOODS_NO_HYDRANTS) {
+    qs.push({
+      category: 'neighborhood-hydrants',
+      type: 'nbhood-hydrant-yn',
+      question: `Are there fire hydrants in ${hood}?`,
+      answer: 'no',
+      mcType: 'yesno',
+      mcPool: () => ['yes','no'],
+    });
+  }
+  return qs;
+}
+
+function buildIntersectionHydrantQuestions() {
+  const qs = [];
+  for (const i of INTERSECTIONS_YES) {
+    qs.push({
+      category: 'intersection-hydrants',
+      type: 'intersection-hydrant-yn',
+      question: `Is there a fire hydrant within 500 feet of ${i}?`,
+      answer: 'yes',
+      mcType: 'yesno',
+      mcPool: () => ['yes','no'],
+    });
+  }
+  for (const i of INTERSECTIONS_NO) {
+    qs.push({
+      category: 'intersection-hydrants',
+      type: 'intersection-hydrant-yn',
+      question: `Is there a fire hydrant within 500 feet of ${i}?`,
+      answer: 'no',
+      mcType: 'yesno',
+      mcPool: () => ['yes','no'],
+    });
+  }
+  return qs;
+}
+
+function buildGeographyQuestions() {
+  const qs = [];
+  // street-to-intersection (all streets)
+  for (const [street, intersection] of STREETS_NO_HOOD) {
+    qs.push({
+      category: 'geography',
+      type: 'street-to-intersection',
+      question: `What is the closest major intersection to ${street}?`,
+      answer: intersection,
+      mcType: 'intersection',
+      mcPool: () => getIntersectionDistractors(intersection),
+    });
+  }
+  for (const [street, intersection, hood] of STREETS_WITH_HOOD) {
+    qs.push({
+      category: 'geography',
+      type: 'street-to-intersection',
+      question: `What is the closest major intersection to ${street}?`,
+      answer: intersection,
+      mcType: 'intersection',
+      mcPool: () => getIntersectionDistractors(intersection),
+    });
+    // Also add neighborhood question for these streets
+    qs.push({
+      category: 'geography',
+      type: 'street-to-neighborhood',
+      question: `Which neighborhood is ${street} in?`,
+      answer: hood,
+      mcType: 'neighborhood',
+      mcPool: () => getNeighborhoodDistractors(hood),
+    });
+  }
+  return qs;
+}
+
+function getNeighborhoodDistractors(correct) {
+  return shuffle3(NEIGHBORHOODS_14.filter(n => n !== correct)).slice(0, 3);
+}
+
+const ALL_QUESTIONS_BY_CAT = {};
+function initQuestionBank() {
+  ALL_QUESTIONS_BY_CAT['businesses'] = buildBusinessQuestions();
+  ALL_QUESTIONS_BY_CAT['neighborhoods'] = buildNeighborhoodQuestions();
+  ALL_QUESTIONS_BY_CAT['street-hydrants'] = buildStreetHydrantQuestions();
+  ALL_QUESTIONS_BY_CAT['neighborhood-hydrants'] = buildNeighborhoodHydrantQuestions();
+  ALL_QUESTIONS_BY_CAT['intersection-hydrants'] = buildIntersectionHydrantQuestions();
+  ALL_QUESTIONS_BY_CAT['geography'] = buildGeographyQuestions();
+}
+
+function getCatCounts() {
+  const out = {};
+  for (const [cat, qs] of Object.entries(ALL_QUESTIONS_BY_CAT)) {
+    out[cat] = qs.length;
+  }
+  return out;
+}
+
+// ============================================================
+// SHUFFLE with seed
+// ============================================================
+let _rng = null;
+function seededShuffle(arr, rng) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(rng() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+// Quick shuffle for distractors (not seeded)
+function shuffle3(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+// ============================================================
+// QUIZ GENERATION
+// ============================================================
+function buildQuiz(totalQ, seed, enabledCats, answerMode) {
+  // Seed offsets per seed number to guarantee spread
+  const seedOffsets = {1:0,2:137,3:271,4:409,5:547,6:683,7:821,8:953,9:1087,10:1223};
+  const rngSeed = (seed * 99991) ^ (seedOffsets[seed] || 0);
+  const rng = mulberry32(rngSeed);
+
+  const activeCats = Object.entries(enabledCats).filter(([,v]) => v).map(([k]) => k);
+  if (activeCats.length === 0) return [];
+
+  // Evenly distribute across active categories
+  const perCat = Math.floor(totalQ / activeCats.length);
+  const extra = totalQ - (perCat * activeCats.length);
+
+  const quiz = [];
+  for (let ci = 0; ci < activeCats.length; ci++) {
+    const cat = activeCats[ci];
+    const pool = seededShuffle([...ALL_QUESTIONS_BY_CAT[cat]], rng);
+    const take = perCat + (ci < extra ? 1 : 0);
+    quiz.push(...pool.slice(0, Math.min(take, pool.length)));
+  }
+
+  // Interleave categories
+  const final = seededShuffle(quiz, rng);
+
+  // Assign answer mode
+  return final.map(q => {
+    let mode = answerMode;
+    if (answerMode === 'both') mode = rng() < 0.5 ? 'typed' : 'mc';
+    // yesno always mc or typed (both fine)
+    return { ...q, mode };
+  });
+}
+
+// ============================================================
+// UI HELPERS
+// ============================================================
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function updateCounts() {
+  const cats = ['businesses','neighborhoods','street-hydrants','neighborhood-hydrants','intersection-hydrants','geography'];
+  cats.forEach(cat => {
+    const el = document.getElementById(`count-${cat}`);
+    const tog = document.getElementById(`toggle-${cat}`);
+    if (el) {
+      const cnt = (ALL_QUESTIONS_BY_CAT[cat] || []).length;
+      el.textContent = `${cnt} questions available`;
+      state.enabledCategories[cat] = tog ? tog.checked : true;
+    }
+  });
+  updateStartBtn();
+}
+
+function updateStartBtn() {
+  const anyOn = Object.values(state.enabledCategories).some(v => v);
+  document.getElementById('start-btn').disabled = !anyOn || !state.totalQ;
+}
+
+function selectMode(m) {
+  state.answerMode = m;
+  ['typed','mc','both'].forEach(id => {
+    document.getElementById(`mode-${id}`).classList.toggle('selected', id === m);
+  });
+}
+
+function setCount(n) {
+  state.totalQ = n;
+  document.querySelectorAll('.preset-btn').forEach(b => {
+    b.classList.toggle('selected', parseInt(b.textContent) === n);
+  });
+  document.getElementById('count-input').value = n;
+  updateStartBtn();
+}
+
+function setCountCustom(v) {
+  const n = parseInt(v);
+  if (n > 0) {
+    state.totalQ = n;
+    document.querySelectorAll('.preset-btn').forEach(b => b.classList.remove('selected'));
+  }
+  updateStartBtn();
+}
+
+function selectSeed(n) {
+  state.seed = n;
+  document.querySelectorAll('.seed-btn').forEach((b, i) => {
+    b.classList.toggle('selected', i + 1 === n);
+  });
+}
+
+function updateHomeStreak() {
+  const s = getStreak();
+  document.getElementById('home-streak').textContent = s;
+}
+
+// ============================================================
+// START QUIZ
+// ============================================================
+function startQuiz() {
+  state.quizQuestions = buildQuiz(state.totalQ, state.seed, state.enabledCategories, state.answerMode);
+  if (state.quizQuestions.length === 0) return;
+  state.currentQ = 0;
+  state.correct = 0;
+  state.answered = 0;
+  state.bestStreak = 0;
+  state.sessionStreak = 0;
+  state.questionLog = [];
+  state.isReview = false;
+  showScreen('screen-quiz');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  const q = state.quizQuestions[state.currentQ];
+  const total = state.quizQuestions.length;
+  document.getElementById('q-num').textContent = state.currentQ + 1;
+  document.getElementById('q-total').textContent = total;
+  document.getElementById('progress-fill').style.width = `${(state.currentQ / total) * 100}%`;
+  document.getElementById('quiz-streak-num').textContent = getStreak();
+  document.getElementById('quiz-correct').textContent = state.correct;
+  document.getElementById('quiz-answered').textContent = state.answered;
+
+  const catLabels = {
+    'businesses': 'Business',
+    'neighborhoods': 'Neighborhood',
+    'street-hydrants': 'Street Hydrant',
+    'neighborhood-hydrants': 'Neighborhood Hydrant',
+    'intersection-hydrants': 'Intersection Hydrant',
+    'geography': 'Geography',
+  };
+
+  let html = `<div class="question-chip">${catLabels[q.category] || q.category}</div>`;
+  html += `<div class="question-text">${escHtml(q.question)}</div>`;
+
+  if (q.mode === 'mc' || q.mcType === 'yesno') {
+    html += buildMCHtml(q);
+  } else {
+    html += `<div class="typed-input-wrap">
+      <input class="typed-input" id="typed-ans" type="text" placeholder="Type your answer..." autocomplete="off" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter')submitAnswer()">
+    </div>
+    <button class="submit-btn" onclick="submitAnswer()">Submit</button>`;
+  }
+
+  html += `<div id="feedback-area"></div>`;
+  html += `<button class="next-btn hidden" id="next-btn" onclick="nextQuestion()">Next Question →</button>`;
+
+  document.getElementById('quiz-body').innerHTML = html;
+
+  // Attach MC click handler via delegation (avoids HTML attribute escaping issues)
+  document.getElementById('quiz-body').addEventListener('click', function mcHandler(e) {
+    const btn = e.target.closest('.mc-choice');
+    if (!btn || btn.disabled) return;
+    document.getElementById('quiz-body').removeEventListener('click', mcHandler);
+    const val = btn.getAttribute('data-val');
+    submitMC(val, btn);
+  }, {once: false});
+
+  if (q.mode !== 'mc') {
+    setTimeout(() => {
+      const el = document.getElementById('typed-ans');
+      if (el) el.focus();
+    }, 100);
+  }
+}
+
+function buildMCHtml(q) {
+  if (q.mcType === 'yesno') {
+    return '<div class="mc-grid"><button class="mc-btn mc-choice" data-val="yes">Yes</button><button class="mc-btn mc-choice" data-val="no">No</button></div>';
+  }
+  const pool = q.mcPool ? q.mcPool() : [];
+  const choices = shuffle3([q.answer, ...pool.slice(0, 3)]);
+  let html = '<div class="mc-grid">';
+  for (const c of choices) {
+    const safe = c.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const display = c.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    html += '<button class="mc-btn mc-choice" data-val="' + safe + '">' + display + '</button>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function submitMC(chosen, btn) {
+  document.querySelectorAll('#quiz-body .mc-btn').forEach(b => { b.disabled = true; b.style.pointerEvents='none'; });
+  const q = state.quizQuestions[state.currentQ];
+  const isCorrect = gradeAnswer(chosen, q.answer);
+  processResult(isCorrect, chosen, btn, q);
+}
+
+function submitAnswer() {
+  const inp = document.getElementById('typed-ans');
+  if (!inp) return;
+  const val = inp.value.trim();
+  if (!val) return;
+  const q = state.quizQuestions[state.currentQ];
+  const isCorrect = gradeAnswer(val, q.answer);
+  inp.disabled = true;
+  inp.classList.add(isCorrect ? 'correct' : 'wrong');
+  document.querySelector('.submit-btn').disabled = true;
+  processResult(isCorrect, val, null, q);
+}
+
+function gradeAnswer(given, correct) {
+  const norm = s => s.trim().toLowerCase()
+    .replace(/\broad\b/g, 'rd').replace(/\bstreet\b/g, 'st')
+    .replace(/\bavenue\b/g, 'ave').replace(/\bboulevard\b/g, 'blvd')
+    .replace(/\bdrive\b/g, 'dr').replace(/\bcourt\b/g, 'ct')
+    .replace(/\bcircle\b/g, 'cir').replace(/\blane\b/g, 'ln')
+    .replace(/\btrail\b/g, 'trl').replace(/\bplace\b/g, 'pl')
+    .replace(/\band\b/g, '&')
+    .replace(/[.,'"]/g, '').replace(/\s+/g, ' ').trim();
+
+  const g = norm(given);
+  const c = norm(correct);
+  if (g === c) return true;
+
+  // yes/no
+  if ((g === 'yes' || g === 'y') && c === 'yes') return true;
+  if ((g === 'no'  || g === 'n') && c === 'no')  return true;
+
+  // Intersections: both parts must be present, order doesn't matter
+  if (c.includes('&')) {
+    if (!g.includes('&')) return false;
+    const cParts = c.split('&').map(p => p.trim());
+    const gParts = g.split('&').map(p => p.trim());
+    // Each part of correct must appear (substring) in a part of given
+    return cParts.every(cp => gParts.some(gp => gp.includes(cp) || cp.includes(gp)));
+  }
+
+  // Addresses: number + direction required; street name core match
+  if (c.match(/^\d+/)) {
+    const cParts = c.split(' ');
+    const gParts = g.split(' ');
+    if (cParts[0] !== gParts[0]) return false; // number must match
+    const dirs = ['nw','ne','sw','se'];
+    const cDir = cParts.find(p => dirs.includes(p));
+    const gDir = gParts.find(p => dirs.includes(p));
+    if (cDir && cDir !== gDir) return false; // direction required and must match
+    // Street name: at least one word must match
+    const cStreet = cParts.slice(1).filter(p => !dirs.includes(p) && !p.match(/^\d/) && p !== 'suite').join(' ');
+    const gStreet = gParts.slice(1).filter(p => !dirs.includes(p) && !p.match(/^\d/) && p !== 'suite').join(' ');
+    return gStreet.length > 0 && (cStreet.includes(gStreet) || gStreet.includes(cStreet));
+  }
+
+  // Names / neighborhoods: normalized full match
+  return g === c;
+}
+
+function processResult(isCorrect, givenAnswer, mcBtn, q) {
+  state.answered++;
+  const currentGlobalStreak = getStreak();
+
+  if (isCorrect) {
+    state.correct++;
+    const newStreak = currentGlobalStreak + 1;
+    setStreakLS(newStreak);
+    state.sessionStreak++;
+    if (state.sessionStreak > state.bestStreak) state.bestStreak = state.sessionStreak;
+    if (mcBtn) mcBtn.classList.add('correct');
+    showFeedback(true, q.answer);
+  } else {
+    setStreakLS(0);
+    state.sessionStreak = 0;
+    if (mcBtn) {
+      mcBtn.classList.add('wrong');
+      // Reveal correct
+      document.querySelectorAll('#quiz-body .mc-btn').forEach(b => {
+        if (b.getAttribute('data-val') === q.answer) b.classList.add('reveal-correct');
+      });
+    }
+    showFeedback(false, q.answer);
+  }
+
+  document.getElementById('quiz-streak-num').textContent = getStreak();
+  document.getElementById('quiz-correct').textContent = state.correct;
+  document.getElementById('quiz-answered').textContent = state.answered;
+  updateHomeStreak();
+
+  state.questionLog.push({
+    question: q.question,
+    answer: q.answer,
+    given: givenAnswer,
+    correct: isCorrect,
+    category: q.category,
+    q: q,
+  });
+
+  document.getElementById('next-btn').classList.remove('hidden');
+}
+
+function showFeedback(correct, answer) {
+  const el = document.getElementById('feedback-area');
+  if (correct) {
+    el.innerHTML = `<div class="feedback-box correct">✓ Correct!</div>`;
+  } else {
+    el.innerHTML = `<div class="feedback-box wrong">✗ Incorrect — Correct answer: <strong>${escHtml(answer)}</strong></div>`;
+  }
+}
+
+function nextQuestion() {
+  state.currentQ++;
+  if (state.currentQ >= state.quizQuestions.length) {
+    showSummary();
+  } else {
+    renderQuestion();
+  }
+}
+
+function confirmEndQuiz() {
+  if (confirm('End quiz early and go to summary?')) {
+    showSummary();
+  }
+}
+
+// ============================================================
+// SUMMARY
+// ============================================================
+function showSummary() {
+  const total = state.questionLog.length;
+  const correct = state.correct;
+  const wrong = total - correct;
+  const pct = total > 0 ? Math.round((correct / total) * 100) : 0;
+
+  document.getElementById('sum-correct').textContent = correct;
+  document.getElementById('sum-wrong').textContent = wrong;
+  document.getElementById('sum-pct').textContent = pct + '%';
+  document.getElementById('sum-streak').textContent = state.bestStreak;
+
+  state.missedQuestions = state.questionLog.filter(l => !l.correct);
+  const reviewBtn = document.getElementById('review-btn');
+  if (state.missedQuestions.length === 0) {
+    reviewBtn.disabled = true;
+    reviewBtn.textContent = 'No Missed Items';
+  } else {
+    reviewBtn.disabled = false;
+    reviewBtn.textContent = `Review ${state.missedQuestions.length} Missed`;
+  }
+
+  // Build question log HTML
+  const missed = state.questionLog.filter(l => !l.correct);
+  const got = state.questionLog.filter(l => l.correct);
+
+  let html = '';
+  if (missed.length > 0) {
+    html += `<div class="summary-section-label">❌ Missed (${missed.length})</div>`;
+    for (const item of missed) {
+      html += buildReviewItemHtml(item);
+    }
+  }
+  if (got.length > 0) {
+    html += `<div class="summary-section-label">✓ Correct (${got.length})</div>`;
+    for (const item of got) {
+      html += buildReviewItemHtml(item);
+    }
+  }
+
+  document.getElementById('summary-body').innerHTML = html;
+  showScreen('screen-summary');
+  // Scroll summary top to top
+  document.getElementById('screen-summary').scrollTop = 0;
+}
+
+function buildReviewItemHtml(item) {
+  const badge = item.correct
+    ? `<span class="review-item-badge badge-right">✓ Correct</span>`
+    : `<span class="review-item-badge badge-wrong">✗ Missed</span>`;
+  const givenLine = item.correct
+    ? `<div class="review-item-correct">Your answer: ${escHtml(item.given)}</div>`
+    : `<div class="review-item-wrong">Your answer: ${escHtml(item.given)} — Correct: <strong>${escHtml(item.answer)}</strong></div>`;
+  return `<div class="review-item ${item.correct ? 'got-it' : 'missed'}">
+    ${badge}
+    <div class="review-item-q">${escHtml(item.question)}</div>
+    ${givenLine}
+  </div>`;
+}
+
+function goHome() {
+  updateHomeStreak();
+  showScreen('screen-home');
+}
+
+// ============================================================
+// REVIEW MODE
+// ============================================================
+function startReview() {
+  if (state.missedQuestions.length === 0) return;
+  state.reviewQuestions = state.missedQuestions.map(l => ({...l.q, mode: state.answerMode === 'mc' ? 'mc' : 'typed'}));
+  state.reviewIdx = 0;
+  state.reviewCorrect = 0;
+  state.reviewAnswered = 0;
+  state.reviewStreak = 0;
+  state.isReview = true;
+  showScreen('screen-review');
+  renderReviewQuestion();
+}
+
+function renderReviewQuestion() {
+  const q = state.reviewQuestions[state.reviewIdx];
+  const total = state.reviewQuestions.length;
+  document.getElementById('rev-num').textContent = state.reviewIdx + 1;
+  document.getElementById('rev-total').textContent = total;
+  document.getElementById('rev-progress-fill').style.width = `${(state.reviewIdx / total) * 100}%`;
+  document.getElementById('rev-streak-num').textContent = getStreak();
+  document.getElementById('rev-correct').textContent = state.reviewCorrect;
+  document.getElementById('rev-answered').textContent = state.reviewAnswered;
+
+  const catLabels = {
+    'businesses':'Business','neighborhoods':'Neighborhood',
+    'street-hydrants':'Street Hydrant','neighborhood-hydrants':'Neighborhood Hydrant',
+    'intersection-hydrants':'Intersection Hydrant','geography':'Geography'
+  };
+
+  let html = `<div class="question-chip">REVIEW — ${catLabels[q.category] || q.category}</div>`;
+  html += `<div class="question-text">${escHtml(q.question)}</div>`;
+
+  if (q.mode === 'mc' || q.mcType === 'yesno') {
+    html += buildMCHtmlReview(q);
+  } else {
+    html += `<div class="typed-input-wrap">
+      <input class="typed-input" id="typed-rev" type="text" placeholder="Type your answer..." autocomplete="off" autocorrect="off" spellcheck="false" onkeydown="if(event.key==='Enter')submitReview()">
+    </div>
+    <button class="submit-btn" onclick="submitReview()">Submit</button>`;
+  }
+  html += `<div id="rev-feedback-area"></div>`;
+  html += `<button class="next-btn hidden" id="rev-next-btn" onclick="nextReviewQuestion()">Next →</button>`;
+
+  document.getElementById('review-body').innerHTML = html;
+
+  document.getElementById('review-body').addEventListener('click', function revMCHandler(e) {
+    const btn = e.target.closest('.mc-choice-rev');
+    if (!btn || btn.disabled) return;
+    document.getElementById('review-body').removeEventListener('click', revMCHandler);
+    const val = btn.getAttribute('data-val');
+    submitRevMC(val, btn);
+  }, {once: false});
+
+  if (q.mode !== 'mc') {
+    setTimeout(() => { const e = document.getElementById('typed-rev'); if(e) e.focus(); }, 100);
+  }
+}
+
+function buildMCHtmlReview(q) {
+  if (q.mcType === 'yesno') {
+    return '<div class="mc-grid"><button class="mc-btn mc-choice-rev" data-val="yes">Yes</button><button class="mc-btn mc-choice-rev" data-val="no">No</button></div>';
+  }
+  const pool = q.mcPool ? q.mcPool() : [];
+  const choices = shuffle3([q.answer, ...pool.slice(0, 3)]);
+  let html = '<div class="mc-grid">';
+  for (const c of choices) {
+    const safe = c.replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const display = c.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    html += '<button class="mc-btn mc-choice-rev" data-val="' + safe + '">' + display + '</button>';
+  }
+  html += '</div>';
+  return html;
+}
+
+function submitRevMC(chosen, btn) {
+  document.querySelectorAll('#review-body .mc-btn').forEach(b => { b.disabled = true; b.style.pointerEvents='none'; });
+  const q = state.reviewQuestions[state.reviewIdx];
+  const isCorrect = gradeAnswer(chosen, q.answer);
+  processReviewResult(isCorrect, chosen, btn, q);
+}
+
+function submitReview() {
+  const inp = document.getElementById('typed-rev');
+  if (!inp) return;
+  const val = inp.value.trim();
+  if (!val) return;
+  const q = state.reviewQuestions[state.reviewIdx];
+  const isCorrect = gradeAnswer(val, q.answer);
+  inp.disabled = true;
+  inp.classList.add(isCorrect ? 'correct' : 'wrong');
+  document.querySelector('.submit-btn').disabled = true;
+  processReviewResult(isCorrect, val, null, q);
+}
+
+function processReviewResult(isCorrect, givenAnswer, mcBtn, q) {
+  state.reviewAnswered++;
+  const gs = getStreak();
+  if (isCorrect) {
+    state.reviewCorrect++;
+    setStreakLS(gs + 1);
+    state.reviewStreak++;
+    if (mcBtn) mcBtn.classList.add('correct');
+    const el = document.getElementById('rev-feedback-area');
+    el.innerHTML = `<div class="feedback-box correct">✓ Correct!</div>`;
+  } else {
+    setStreakLS(0);
+    state.reviewStreak = 0;
+    if (mcBtn) {
+      mcBtn.classList.add('wrong');
+      document.querySelectorAll('#review-body .mc-btn').forEach(b => {
+        if (b.getAttribute('data-val') === q.answer) b.classList.add('reveal-correct');
+      });
+    }
+    const el = document.getElementById('rev-feedback-area');
+    el.innerHTML = `<div class="feedback-box wrong">✗ Incorrect — Correct: <strong>${escHtml(q.answer)}</strong></div>`;
+  }
+  document.getElementById('rev-streak-num').textContent = getStreak();
+  document.getElementById('rev-correct').textContent = state.reviewCorrect;
+  document.getElementById('rev-answered').textContent = state.reviewAnswered;
+  updateHomeStreak();
+  document.getElementById('rev-next-btn').classList.remove('hidden');
+}
+
+function nextReviewQuestion() {
+  state.reviewIdx++;
+  if (state.reviewIdx >= state.reviewQuestions.length) {
+    endReview();
+  } else {
+    renderReviewQuestion();
+  }
+}
+
+function endReview() {
+  // Return to summary, refresh missed list if needed
+  showScreen('screen-summary');
+  document.getElementById('screen-summary').scrollTop = 0;
+}
+
+// ============================================================
+// UTILITY
+// ============================================================
+function escHtml(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+function escAttr(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#39;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+// ============================================================
+// INIT
+// ============================================================
+window.onload = function() {
+  initQuestionBank();
+  editorLoadFromStorage();
+  updateCounts();
+  setCount(10);
+  selectSeed(1);
+  selectMode('typed');
+  updateHomeStreak();
+  initUpdateLabel();
+  // URL hash routing — navigate to #editor to open editor directly
+  if (window.location.hash === '#editor') {
+    openEditor();
+  }
+};
+
+// ============================================================
+// UPDATE DATE LABEL
+// ============================================================
+// EXPORT_DATE is replaced at export time with the actual date string.
+// If it reads 'LIVE', the file has not been exported yet (dev mode).
+const EXPORT_DATE = 'LIVE';
+
+function initUpdateLabel() {
+  const el = document.getElementById('update-label');
+  if (!el) return;
+  if (EXPORT_DATE && EXPORT_DATE !== 'LIVE') {
+    el.textContent = 'Updated ' + EXPORT_DATE;
+  }
+}
+
+// ============================================================
+// EDITOR — DATA LAYER
+// ============================================================
+
+const EDITOR_STORAGE_KEY = 'pfd_editor_bank';
+
+// Category metadata: display name, the yes/no categories, and which raw arrays to edit
+const EDITOR_CATS = [
+  { key: 'businesses',            label: 'Businesses & Occupancies',    yesno: false },
+  { key: 'neighborhoods',         label: 'Neighborhoods',               yesno: false },
+  { key: 'street-hydrants',       label: 'Street Hydrants',            yesno: true  },
+  { key: 'neighborhood-hydrants', label: 'Neighborhood Hydrants',       yesno: true  },
+  { key: 'intersection-hydrants', label: 'Intersection Hydrants',       yesno: true  },
+  { key: 'geography',             label: 'General Geography',           yesno: false },
+];
+
+// editorBank holds flat arrays of {question, answer} objects per category key.
+// On first load it is built from the hardcoded question builders.
+let editorBank = {};
+
+function editorBankFromBuilt() {
+  const bank = {};
+  for (const cat of EDITOR_CATS) {
+    bank[cat.key] = (ALL_QUESTIONS_BY_CAT[cat.key] || []).map(q => ({
+      question: q.question,
+      answer: q.answer,
+    }));
+  }
+  return bank;
+}
+
+function editorLoadFromStorage() {
+  const raw = localStorage.getItem(EDITOR_STORAGE_KEY);
+  if (raw) {
+    try {
+      const parsed = JSON.parse(raw);
+      // Validate it has all keys
+      const valid = EDITOR_CATS.every(c => Array.isArray(parsed[c.key]));
+      if (valid) {
+        editorBank = parsed;
+        // Rebuild ALL_QUESTIONS_BY_CAT from editorBank so quiz uses edited data
+        rebuildQuizBankFromEditor();
+        return;
+      }
+    } catch(e) {}
+  }
+  // No valid storage — build from hardcoded defaults
+  editorBank = editorBankFromBuilt();
+}
+
+function editorSaveToStorage() {
+  localStorage.setItem(EDITOR_STORAGE_KEY, JSON.stringify(editorBank));
+}
+
+// Rebuild the live quiz question bank from editorBank entries
+function rebuildQuizBankFromEditor() {
+  for (const cat of EDITOR_CATS) {
+    ALL_QUESTIONS_BY_CAT[cat.key] = editorBank[cat.key].map(item => ({
+      category: cat.key,
+      question: item.question,
+      answer: item.answer,
+      mcType: inferMcType(cat, item.answer),
+      mcPool: inferMcPool(cat, item.answer),
+    }));
+  }
+  updateCounts();
+}
+
+function inferMcType(cat, answer) {
+  if (cat.yesno) return 'yesno';
+  const a = (answer || '').toLowerCase();
+  if (a === 'yes' || a === 'no') return 'yesno';
+  if (answer && answer.includes('&')) return 'intersection';
+  if (answer && answer.match(/^\d+/)) return 'address';
+  if (NEIGHBORHOODS_14.includes(answer)) return 'neighborhood';
+  return 'name';
+}
+
+function inferMcPool(cat, answer) {
+  if (cat.yesno) return () => ['yes','no'];
+  const a = (answer || '').toLowerCase();
+  if (a === 'yes' || a === 'no') return () => ['yes','no'];
+  if (answer && answer.includes('&')) return () => getIntersectionDistractors(answer);
+  if (answer && answer.match(/^\d+/)) return () => getAddressDistractors(answer);
+  if (NEIGHBORHOODS_14.includes(answer)) return () => getNeighborhoodDistractors(answer);
+  return () => getNameDistractors(answer, '');
+}
+
+// ============================================================
+// EDITOR — NAVIGATION
+// ============================================================
+
+function openEditor() {
+  editorRenderList();
+  showScreen('screen-editor');
+}
+
+function editorGoHome() {
+  // Clear hash without reload
+  history.replaceState(null, '', window.location.pathname);
+  showScreen('screen-home');
+}
+
+// ============================================================
+// EDITOR — RENDER LIST
+// ============================================================
+
+let editorExpandedKey = null; // "{catKey}-{index}"
+
+function editorRenderList() {
+  const searchRaw = (document.getElementById('editor-search').value || '').trim().toLowerCase();
+  const listEl = document.getElementById('editor-list');
+  const countEl = document.getElementById('editor-search-count');
+
+  let totalShown = 0;
+  let html = '';
+
+  for (const cat of EDITOR_CATS) {
+    const items = editorBank[cat.key] || [];
+    const filtered = items.map((item, i) => ({ item, i })).filter(({ item }) => {
+      if (!searchRaw) return true;
+      return item.question.toLowerCase().includes(searchRaw) ||
+             item.answer.toLowerCase().includes(searchRaw);
+    });
+
+    if (searchRaw && filtered.length === 0) continue;
+
+    totalShown += filtered.length;
+    html += `<div class="editor-cat-divider">
+      <div class="editor-cat-label">${escHtml(cat.label)}</div>
+      <div class="editor-cat-line"></div>
+      <div class="editor-cat-count">${filtered.length} of ${items.length}</div>
+    </div>`;
+
+    if (!searchRaw) {
+      html += `<button class="editor-add-btn" onclick="editorAddQuestion('${cat.key}')">+ Add Question</button>`;
+    }
+
+    for (const { item, i } of filtered) {
+      const rowKey = `${cat.key}-${i}`;
+      const isExpanded = editorExpandedKey === rowKey;
+      const isYesNo = cat.yesno || item.answer === 'yes' || item.answer === 'no';
+
+      html += `<div class="editor-q-row${isExpanded ? ' expanded' : ''}" id="erow-${cat.key}-${i}">
+        <div class="editor-q-summary" onclick="editorToggleRow('${cat.key}', ${i})">
+          <div>
+            <div class="editor-q-text">${escHtml(item.question)}</div>
+            <div class="editor-q-answer">→ ${escHtml(item.answer)}</div>
+          </div>
+          <div class="editor-q-chevron">▼</div>
+        </div>`;
+
+      // Inline edit panel (shown on desktop via CSS, hidden on mobile)
+      if (isExpanded) {
+        html += `<div class="editor-inline-panel">${buildEditFormHtml(cat.key, i, item, isYesNo, 'inline')}</div>`;
+      } else {
+        html += `<div class="editor-inline-panel"></div>`;
+      }
+
+      html += `</div>`;
+    }
+  }
+
+  if (totalShown === 0) {
+    html += `<div class="editor-empty">No questions match "${escHtml(searchRaw)}"</div>`;
+  }
+
+  listEl.innerHTML = html;
+
+  // Apply dimming class
+  listEl.classList.toggle('has-expanded', editorExpandedKey !== null);
+
+  // Update search count
+  if (searchRaw) {
+    countEl.textContent = `${totalShown} result${totalShown !== 1 ? 's' : ''}`;
+  } else {
+    const total = EDITOR_CATS.reduce((s, c) => s + (editorBank[c.key] || []).length, 0);
+    countEl.textContent = `${total} total questions`;
+  }
+
+  // Scroll expanded row into view on desktop
+  if (editorExpandedKey) {
+    const [ck, ci] = editorExpandedKey.split(/-(\d+)$/).filter(Boolean);
+    const el = document.getElementById(`erow-${ck}-${ci}`);
+    if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 50);
+  }
+}
+
+function buildEditFormHtml(catKey, idx, item, isYesNo, context) {
+  const pfx = context === 'inline' ? `il` : `ov`;
+  const answerField = isYesNo
+    ? `<div class="yn-toggle-wrap">
+        <button class="yn-btn${item.answer === 'yes' ? ' selected-yes' : ''}" id="${pfx}-yn-yes" onclick="editorYnToggle('${pfx}','yes')">Yes</button>
+        <button class="yn-btn${item.answer === 'no'  ? ' selected-no'  : ''}" id="${pfx}-yn-no"  onclick="editorYnToggle('${pfx}','no')">No</button>
+       </div>
+       <input type="hidden" id="${pfx}-answer" value="${escHtml(item.answer)}">`
+    : `<input class="edit-text-input" id="${pfx}-answer" type="text" value="${escHtml(item.answer)}" autocomplete="off" spellcheck="false">`;
+
+  return `
+    <div class="edit-field-label">Question</div>
+    <input class="edit-text-input" id="${pfx}-question" type="text" value="${escHtml(item.question)}" autocomplete="off" spellcheck="false">
+    <div class="edit-field-label">Answer</div>
+    ${answerField}
+    <div class="edit-actions">
+      <button class="btn-save-edit" onclick="editorSaveEdit('${catKey}', ${idx}, '${pfx}')">Save</button>
+      <button class="btn-del-edit"  onclick="editorDeleteQuestion('${catKey}', ${idx})">Delete</button>
+      <button class="btn-cancel-edit" onclick="editorCancelEdit()">Cancel</button>
+    </div>`;
+}
+
+// ============================================================
+// EDITOR — ROW TOGGLE (desktop inline vs mobile overlay)
+// ============================================================
+
+function editorToggleRow(catKey, idx) {
+  const rowKey = `${catKey}-${idx}`;
+  const isMobile = window.innerWidth < 600;
+
+  if (editorExpandedKey === rowKey) {
+    // Collapse
+    editorExpandedKey = null;
+    editorRenderList();
+    return;
+  }
+
+  editorExpandedKey = rowKey;
+
+  if (isMobile) {
+    // Show overlay instead of inline panel
+    editorExpandedKey = null; // don't highlight row
+    const item = editorBank[catKey][idx];
+    const cat = EDITOR_CATS.find(c => c.key === catKey);
+    const isYesNo = cat.yesno || item.answer === 'yes' || item.answer === 'no';
+    document.getElementById('editor-overlay-title').textContent = cat.label;
+    document.getElementById('editor-overlay-form').innerHTML = buildEditFormHtml(catKey, idx, item, isYesNo, 'ov');
+    document.getElementById('editor-overlay-backdrop').classList.add('open');
+  } else {
+    editorRenderList();
+  }
+}
+
+function editorOverlayBackdropClick(e) {
+  if (e.target === document.getElementById('editor-overlay-backdrop')) {
+    editorCloseOverlay();
+  }
+}
+
+function editorCloseOverlay() {
+  document.getElementById('editor-overlay-backdrop').classList.remove('open');
+}
+
+function editorYnToggle(pfx, val) {
+  document.getElementById(`${pfx}-answer`).value = val;
+  document.getElementById(`${pfx}-yn-yes`).className = 'yn-btn' + (val === 'yes' ? ' selected-yes' : '');
+  document.getElementById(`${pfx}-yn-no`).className  = 'yn-btn' + (val === 'no'  ? ' selected-no'  : '');
+}
+
+// ============================================================
+// EDITOR — CRUD OPERATIONS
+// ============================================================
+
+function editorSaveEdit(catKey, idx, pfx) {
+  const q = document.getElementById(`${pfx}-question`).value.trim();
+  const a = document.getElementById(`${pfx}-answer`).value.trim();
+  if (!q || !a) { alert('Question and answer cannot be empty.'); return; }
+  editorBank[catKey][idx] = { question: q, answer: a };
+  editorSaveToStorage();
+  rebuildQuizBankFromEditor();
+  editorExpandedKey = null;
+  editorCloseOverlay();
+  editorRenderList();
+}
+
+function editorCancelEdit() {
+  editorExpandedKey = null;
+  editorCloseOverlay();
+  editorRenderList();
+}
+
+async function editorDeleteQuestion(catKey, idx) {
+  const item = editorBank[catKey][idx];
+  const confirmed = await showConfirmDialog(
+    'Delete Question',
+    `Delete this question?\n\n"${item.question}"\n\nThis cannot be undone until you reset or export.`
+  );
+  if (!confirmed) return;
+  editorBank[catKey].splice(idx, 1);
+  editorSaveToStorage();
+  rebuildQuizBankFromEditor();
+  editorExpandedKey = null;
+  editorCloseOverlay();
+  editorRenderList();
+}
+
+function editorAddQuestion(catKey) {
+  const cat = EDITOR_CATS.find(c => c.key === catKey);
+  const newItem = { question: '', answer: cat.yesno ? 'yes' : '' };
+  editorBank[catKey].push(newItem);
+  const newIdx = editorBank[catKey].length - 1;
+  editorSaveToStorage();
+  rebuildQuizBankFromEditor();
+  editorExpandedKey = null;
+  editorRenderList();
+  // Auto-open the new row
+  setTimeout(() => editorToggleRow(catKey, newIdx), 80);
+}
+
+async function editorResetToDefaults() {
+  const confirmed = await showConfirmDialog(
+    'Reset to Last Export',
+    'This will discard ALL edits made since this file was last exported and restore the baked-in question bank. Are you sure?',
+    'Reset'
+  );
+  if (!confirmed) return;
+  localStorage.removeItem(EDITOR_STORAGE_KEY);
+  // Re-init from hardcoded data
+  initQuestionBank();
+  editorBank = editorBankFromBuilt();
+  rebuildQuizBankFromEditor();
+  editorExpandedKey = null;
+  document.getElementById('editor-search').value = '';
+  editorRenderList();
+}
+
+// ============================================================
+// EDITOR — EXPORT
+// ============================================================
+
+function editorExport() {
+  // Format the date stamp
+  const now = new Date();
+  const months = ['January','February','March','April','May','June',
+                  'July','August','September','October','November','December'];
+  const day = now.getDate();
+  const suffix = day === 1||day===21||day===31 ? 'st' : day===2||day===22 ? 'nd' : day===3||day===23 ? 'rd' : 'th';
+  const dateStr = `${months[now.getMonth()]} ${day}${suffix}, ${now.getFullYear()}`;
+
+  // Get the full current HTML source
+  const src = document.documentElement.outerHTML;
+
+  // 1. Stamp the export date (replace the EXPORT_DATE constant value)
+  let out = src.replace(/const EXPORT_DATE = '[^']*';/, `const EXPORT_DATE = '${dateStr}';`);
+
+  // 2. Bake the current editorBank into the exported HTML by replacing
+  //    the localStorage initialization with a pre-loaded bank.
+  //    We do this by injecting an inline script that pre-seeds localStorage
+  //    before the main script runs, so on first open the bank is ready.
+  //    Actually simpler: we replace the EDITOR_STORAGE_KEY localStorage value
+  //    by injecting it at the top of the <body> as a one-time bootstrap.
+
+  const bankJson = JSON.stringify(editorBank).replace(/</g,'\\u003c').replace(/>/g,'\\u003e').replace(/&/g,'\\u0026');
+
+  // Inject a bootstrap script right after <body> that seeds localStorage
+  out = out.replace(
+    /(<body[^>]*>)/,
+    `$1\n<!-- PFD EXPORT BOOTSTRAP: seeds question bank on first open -->\n<script>try{localStorage.setItem('${EDITOR_STORAGE_KEY}',${JSON.stringify(bankJson)});}catch(e){}<\/script>`
+  );
+
+  // Create download
+  const blob = new Blob([out], { type: 'text/html;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `PFD_Training_Quiz_${now.getFullYear()}${String(now.getMonth()+1).padStart(2,'0')}${String(now.getDate()).padStart(2,'0')}.html`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// ============================================================
+// CONFIRM DIALOG
+// ============================================================
+
+let _confirmResolve = null;
+
+function showConfirmDialog(title, msg, okLabel) {
+  return new Promise(resolve => {
+    _confirmResolve = resolve;
+    document.getElementById('confirm-dialog-title').textContent = title;
+    document.getElementById('confirm-dialog-msg').textContent = msg;
+    document.getElementById('confirm-dialog-ok').textContent = okLabel || 'Delete';
+    document.getElementById('confirm-dialog-backdrop').classList.add('open');
+  });
+}
+
+function confirmDialogResolve(val) {
+  document.getElementById('confirm-dialog-backdrop').classList.remove('open');
+  if (_confirmResolve) { _confirmResolve(val); _confirmResolve = null; }
+}
+</script>
+</body>
+</html>
