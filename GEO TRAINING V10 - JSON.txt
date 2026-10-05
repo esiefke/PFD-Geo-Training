@@ -1,0 +1,2314 @@
+﻿{
+
+
+  "updated_at": "2026-10-04",
+
+
+  "categories": {
+
+
+    "Businesses": [
+
+
+      { "question": "What is the address of Bridge Church?", "answer": "4050 Edmond Rd NE", "difficulty": "normal" },
+
+
+      { "question": "What is at 4050 Edmond Rd NE?", "answer": "Bridge Church", "difficulty": "normal" },
+
+
+      { "question": "What is the address of CZAR Athletics?", "answer": "324 Edmond Rd NE", "difficulty": "normal" },
+
+
+      { "question": "What is at 324 Edmond Rd NE?", "answer": "CZAR Athletics", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Caseys?", "answer": "1683 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 1683 Piedmont Rd N?", "answer": "Caseys", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Champion Driving School?", "answer": "1885 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 1885 Piedmont Rd N?", "answer": "Champion Driving School", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Chesters Party Barn?", "answer": "5201 Cimarron Rd NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 5201 Cimarron Rd NW?", "answer": "Chesters Party Barn", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Chicos Mexican Restaurant?", "answer": "256 Edmond Rd NE", "difficulty": "hard" },
+
+
+      { "question": "What is at 256 Edmond Rd NE?", "answer": "Chicos Mexican Restaurant", "difficulty": "normal" },
+
+
+      { "question": "What is the address of City Stop?", "answer": "410 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 410 Piedmont Rd N?", "answer": "City Stop", "difficulty": "hard" },
+
+
+      { "question": "What is the address of Cloud Meds?", "answer": "210 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 210 Piedmont Rd N?", "answer": "Cloud Meds", "difficulty": "normal" },
+
+
+      { "question": "What is the address of DCX Allstars?", "answer": "1841 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 1841 Piedmont Rd N?", "answer": "DCX Allstars", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Dolese Bros?", "answer": "6013 Edmond Rd NE", "difficulty": "normal" },
+
+
+      { "question": "What is at 6013 Edmond Rd NE?", "answer": "Dolese Bros", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Dollar General?", "answer": "1468 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 1468 Piedmont Rd N?", "answer": "Dollar General", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Dollar Tree?", "answer": "750 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 750 Piedmont Rd N?", "answer": "Dollar Tree", "difficulty": "normal" },
+
+
+      { "question": "What is the address of ECI D&K Art Studio?", "answer": "1213 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 1213 Piedmont Rd N?", "answer": "ECI D&K Art Studio", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Emerald Fire Meds?", "answer": "1411 Douglas NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 1411 Douglas NW?", "answer": "Emerald Fire Meds", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Epic Charter Schools?", "answer": "1885 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 1885 Piedmont Rd N?", "answer": "Epic Charter Schools", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Farmers Insurance?", "answer": "104 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 104 Piedmont Rd N?", "answer": "Farmers Insurance", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Fire Station 1?", "answer": "314 Edmond Rd NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 314 Edmond Rd NW?", "answer": "Fire Station 1", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Freedom Church?", "answer": "591 Edmond Rd NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 591 Edmond Rd NW?", "answer": "Freedom Church", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Hometown Hardware?", "answer": "1275 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 1275 Piedmont Rd N?", "answer": "Hometown Hardware", "difficulty": "normal" },
+
+
+      { "question": "What is the address of La Herencia Mexican Grill?", "answer": "1430 Piedmont Rd N", "difficulty": "hard" },
+
+
+      { "question": "What is at 1430 Piedmont Rd N?", "answer": "La Herencia Mexican Grill", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Leach Automotive?", "answer": "107 Madison Ave NE", "difficulty": "normal" },
+
+
+      { "question": "What is at 107 Madison Ave NE?", "answer": "Leach Automotive", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Life Gym?", "answer": "1432 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 1432 Piedmont Rd N?", "answer": "Life Gym", "difficulty": "normal" },
+
+
+      { "question": "What is the address of MPH Automotive?", "answer": "141 Edmond Rd NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 141 Edmond Rd NW?", "answer": "MPH Automotive", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Nance Precast?", "answer": "5601 Washington Ave E", "difficulty": "normal" },
+
+
+      { "question": "What is at 5601 Washington Ave E?", "answer": "Nance Precast", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Old Store?", "answer": "100 Monroe Ave NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 100 Monroe Ave NW?", "answer": "Old Store", "difficulty": "normal" },
+
+
+      { "question": "What is the address of PAVA Event Center?", "answer": "170 Edmond Rd NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 170 Edmond Rd NW?", "answer": "PAVA Event Center", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Phoenix Asian Cuisine?", "answer": "318 Edmond Rd NE", "difficulty": "normal" },
+
+
+      { "question": "What is at 318 Edmond Rd NE?", "answer": "Phoenix Asian Cuisine", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Athletic Center WAC?", "answer": "1055 Edmond Rd NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 1055 Edmond Rd NW?", "answer": "Piedmont Athletic Center WAC", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Baptist Church?", "answer": "15 Jackson Ave NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 15 Jackson Ave NW?", "answer": "Piedmont Baptist Church", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Chiropractic?", "answer": "325 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 325 Piedmont Rd N?", "answer": "Piedmont Chiropractic", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Church of the Nazarene?", "answer": "2011 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 2011 Piedmont Rd N?", "answer": "Piedmont Church of the Nazarene", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Community Park?", "answer": "130 Gooder Simpson Blvd", "difficulty": "hard" },
+
+
+      { "question": "What is at 130 Gooder Simpson Blvd?", "answer": "Piedmont Community Park", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Cuisine?", "answer": "91 Monroe Ave NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 91 Monroe Ave NW?", "answer": "Piedmont Cuisine", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Dental?", "answer": "51 Gooder Simpson Blvd A", "difficulty": "normal" },
+
+
+      { "question": "What is at 51 Gooder Simpson Blvd A?", "answer": "Piedmont Dental", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Elementary School?", "answer": "1011 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 1011 Piedmont Rd N?", "answer": "Piedmont Elementary School", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Family Health?", "answer": "63 Gooder Simpson Blvd", "difficulty": "normal" },
+
+
+      { "question": "What is at 63 Gooder Simpson Blvd?", "answer": "Piedmont Family Health", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Football Complex?", "answer": "917 Piedmont Rd N", "difficulty": "hard" },
+
+
+      { "question": "What is at 917 Piedmont Rd N?", "answer": "Piedmont Football Complex", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont High School?", "answer": "1055 Edmond Rd NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 1055 Edmond Rd NW?", "answer": "Piedmont High School", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Historical Museum?", "answer": "101 Monroe Ave NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 101 Monroe Ave NW?", "answer": "Piedmont Historical Museum", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Intermediate School?", "answer": "977 Washington Ave NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 977 Washington Ave NW?", "answer": "Piedmont Intermediate School", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Learning Center?", "answer": "615 Edmond Rd NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 615 Edmond Rd NW?", "answer": "Piedmont Learning Center", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Library?", "answer": "1129 Stout Dr NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 1129 Stout Dr NW?", "answer": "Piedmont Library", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Methodist Church?", "answer": "2525 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 2525 Piedmont Rd N?", "answer": "Piedmont Methodist Church", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Middle School?", "answer": "823 2nd St NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 823 2nd St NW?", "answer": "Piedmont Middle School", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Pharmacy?", "answer": "97 Gooder Simpson Blvd", "difficulty": "normal" },
+
+
+      { "question": "What is at 97 Gooder Simpson Blvd?", "answer": "Piedmont Pharmacy", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Post Office?", "answer": "112 Jackson Ave NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 112 Jackson Ave NW?", "answer": "Piedmont Post Office", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Tag?", "answer": "414 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 414 Piedmont Rd N?", "answer": "Piedmont Tag", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Piedmont Vision?", "answer": "51 Gooder Simpson Blvd C", "difficulty": "normal" },
+
+
+      { "question": "What is at 51 Gooder Simpson Blvd C?", "answer": "Piedmont Vision", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Police Station?", "answer": "400 Edmond Rd NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 400 Edmond Rd NW?", "answer": "Police Station", "difficulty": "normal" },
+
+
+      { "question": "What is the address of RB Bearinger?", "answer": "320 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 320 Piedmont Rd N?", "answer": "RB Bearinger", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Sharps BBQ?", "answer": "83 Monroe Ave NE", "difficulty": "normal" },
+
+
+      { "question": "What is at 83 Monroe Ave NE?", "answer": "Sharps BBQ", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Soldier Creek Church of Christ?", "answer": "415 Monroe Ave NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 415 Monroe Ave NW?", "answer": "Soldier Creek Church of Christ", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Sonic?", "answer": "1317 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 1317 Piedmont Rd N?", "answer": "Sonic", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Subway?", "answer": "1527 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 1527 Piedmont Rd N?", "answer": "Subway", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Sybills Diner?", "answer": "246 Edmond Rd NE", "difficulty": "normal" },
+
+
+      { "question": "What is at 246 Edmond Rd NE?", "answer": "Sybills Diner", "difficulty": "normal" },
+
+
+      { "question": "What is the address of TWD Shirt Company?", "answer": "115 Monroe Ave NW", "difficulty": "normal" },
+
+
+      { "question": "What is at 115 Monroe Ave NW?", "answer": "TWD Shirt Company", "difficulty": "normal" },
+
+
+      { "question": "What is the address of West View Church of Christ?", "answer": "175 Gooder Simpson Blvd", "difficulty": "normal" },
+
+
+      { "question": "What is at 175 Gooder Simpson Blvd?", "answer": "West View Church of Christ", "difficulty": "normal" },
+
+
+      { "question": "What is the address of White Fields?", "answer": "7127 County Line Rd NE", "difficulty": "normal" },
+
+
+      { "question": "What is at 7127 County Line Rd NE?", "answer": "White Fields", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Wildcat Stop?", "answer": "407 Piedmont Rd N", "difficulty": "normal" },
+
+
+      { "question": "What is at 407 Piedmont Rd N?", "answer": "Wildcat Stop", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Wildcatter Whiskey and Wine?", "answer": "156 Edmond Rd NW Suite 104", "difficulty": "normal" },
+
+
+      { "question": "What is at 156 Edmond Rd NW Suite 104?", "answer": "Wildcatter Whiskey and Wine", "difficulty": "normal" },
+
+
+      { "question": "What is the address of Williams Grocery?", "answer": "410 Piedmont Rd S", "difficulty": "normal" },
+
+
+      { "question": "What is at 410 Piedmont Rd S?", "answer": "Williams Grocery", "difficulty": "hard" }
+
+
+    ],
+
+
+    "Neighborhood Geography": [
+
+
+      { "question": "What is the closest major intersection to Circle V?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Coyotee Springs?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Eastwind?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Emerald Pointe?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Golden Hills?", "answer": "178th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Magnolia Meadows?", "answer": "164th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Olde Town?", "answer": "164th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Rolling Prairie?", "answer": "164th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Shenandoah?", "answer": "178th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Skyline?", "answer": "164th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Town Central?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Vails Ranchette?", "answer": "192nd & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Windmill Park?", "answer": "178th & Piedmont Rd", "difficulty": "normal" }
+
+
+    ],
+
+
+    "Street Hydrants": [
+
+
+      { "question": "Are there fire hydrants on Abby Ln NE?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Abney SW?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Acorn Bend?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Adraina Way?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Akeman Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Amanda Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Amy Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Angela Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Angela Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Antelope St?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Ashley Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Aspen Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Auburn Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Auburn Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Auburn Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Avondale Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Bethany Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Birch Ave?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Blugil Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Bobcat Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Boevers Way?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Buchanan Ave?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Buena Vista?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Burlwood Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Caleb Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Callahan Way?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Campbell Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Candice Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Canyon View Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Carolina Ct?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Carrie Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Cedar Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Chesapeake Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Chestnut Canyon?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Chestnut Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Cheyenne Way?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Chisholm Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Chuck Wagon?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Cindy Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Cobalt Ct?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Cole Way?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Copper Hill Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Copper Ridge Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Covered Wagon Trl?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Coyote Run?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Coyotee Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Craig Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Cypress St?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Daisy Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Daybreak Ct?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Deer Brook Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Deer Brook Trl?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Diamond Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Dickerson Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Douglas Blvd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Duboise?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Eagle Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on East Ridge Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on East Trail Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Elements Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Elk Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Elm St?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Every Ave?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Faint Ridge?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Faint Ridge Way?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Falcon Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Fawn Creek Ct?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Fillmore Ave?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Golden Brook Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Golden Hills Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Gooder Simpson Blvd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Grant Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Green Gulch Run?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Hall?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Hammond?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Harold Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Hart Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Harvest Elm?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Hawk Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Heritage Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Hickory Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Hickory Trl?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on High Meadows Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Hudson Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Hunter Ridge?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Jane Cir?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Johnson Ave?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Koerner Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Korie Cove?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Lake Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Lincoln Ave?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Linton Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Locust Grove Run?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Log Cabin?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Longview Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Lorraine Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Mahogany Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Makenzie Trail?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Maryanna?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Matt Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Maverick Pass?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Meadowlark St?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Merlon Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Mimosa Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Misty Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Moose St?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on North Trail Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Northridge Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Oak Cir NW?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Old Wagon?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Olde Town Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Olde Town Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Orchid Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Painted Wagon Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Paris Ave?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Parker Mill Trail?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Parker Ridge?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Paulette Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Peony Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Phils Way?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Pierce Ave?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Pineridge Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Plumeria Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Polk Ave?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Polk Place?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Poplar Ave?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Primrose Point Ave?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Ranch Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Raven Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Raymond Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Red Oak Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Red Valley Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Redbud Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Reta Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Richards Way?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Ridge Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Ridgeview Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Rock Cliff Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Rock Cliff Way?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Rocky Top Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Rolling Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Ruby Ridge?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Saddle Springs Trl?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Shasta Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Shevlin Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Shirley Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Sienna Creek Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Silver Crossings Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Skyler Ridge?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Slaton Cir?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Smokey Bend Ridge?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on South Ridge Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Starlight Terr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Starry Night Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Stephanie Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Stephany Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Steven Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Stone Ave?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Strod Cir?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Strod Ct?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Sue Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Sundance Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Susanna?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Sycamore Ave?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Tawny Hills?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Taylor Ave?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Terrace Hills Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Terry Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Tilton Trl?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Topaz Meadows Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Tracy Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Traditions Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Trails End?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Turkey Creek Ln?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Turkey Hollow Trl?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Tuscany Way?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Tyler Ave?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Umber Way?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Vandiver SW?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Venetian Ave?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Via Arezzo?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Wagon Train Cir?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Walnut Brook?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Whispering Creek Ct?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Wilson Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Winding Creek?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Windmill Blvd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Wolf Lake Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Zella Way?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Andy Ave?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Auburn Ct?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Badger St?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Bella Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Cedar Valley?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Fina Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Hummingbird Ln?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Katlyn Pass?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Kyle Trail?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Layton Way?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Longhorn Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Mark Cir?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Oaks Terrance?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Ryan Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Sunflower?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Treece Dr?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Wildcat Way?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Bridal Path?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Horseshoe Bend?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Lariet Dr?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Spur Cir?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants on Wagonwheel Cir?", "answer": "no", "difficulty": "normal" }
+
+
+    ],
+
+
+    "Neighborhood Hydrants": [
+
+
+      { "question": "Are there fire hydrants in Circle V?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Coyotee Springs?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Eastwind?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Emerald Pointe?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Golden Hills?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Magnolia Meadows?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Olde Town?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Rolling Prairie?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Shenandoah?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Skyline?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in The Oaks?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Town Central?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Vails Ranchette?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Winding Creek 1?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Winding Creek 2?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Are there fire hydrants in Windmill Park?", "answer": "yes", "difficulty": "normal" }
+
+
+    ],
+
+
+    "Major Intersection Hydrants": [
+
+
+      { "question": "Is there a fire hydrant near the intersection of 150th and Piedmont Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 164th and Cemetery Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 164th and Cimarron Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 164th and County Line Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 164th and Frisco Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 164th and Morgan Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 164th and Piedmont Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 164th and Richland Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 164th and Sara Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 178th and Cemetery Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 178th and Cimarron Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 178th and County Line Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 178th and Frisco Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 178th and Gregory Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 178th and Morgan Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 178th and Mustang Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 178th and Piedmont Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 178th and Richland Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 178th and Sara Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 192nd and Cemetery Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 192nd and Cimarron Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 192nd and County Line Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 192nd and Frisco Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 192nd and Gregory Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 192nd and Morgan Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 192nd and Mustang Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 192nd and Piedmont Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 192nd and Richland Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 192nd and Sara Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 206th and Cemetery Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 206th and Cimarron Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 206th and County Line Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 206th and Frisco Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 206th and Gregory Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 206th and Morgan Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 206th and Mustang Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 206th and Piedmont Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 206th and Richland Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 206th and Sara Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 220th and Cemetery Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 220th and Cimarron Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 220th and County Line Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 220th and Gregory Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 220th and Morgan Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 220th and Mustang Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 220th and Piedmont Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 220th and Richland Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 220th and Sara Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 234th and Cemetery Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 234th and Cimarron Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 234th and County Line Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 234th and Frisco Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 234th and Gregory Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 234th and Morgan Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 234th and Mustang Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 234th and Piedmont Rd?", "answer": "yes", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 234th and Richland Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 234th and Sara Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 248th and Cemetery Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 248th and Cimarron Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 248th and County Line Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 248th and Frisco Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 248th and Gregory Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 248th and Mustang Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 248th and Piedmont Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 248th and Richland Rd?", "answer": "no", "difficulty": "normal" },
+
+
+      { "question": "Is there a fire hydrant near the intersection of 248th and Sara Rd?", "answer": "no", "difficulty": "normal" }
+
+
+    ],
+
+
+    "General Geography": [
+
+
+      { "question": "What is the closest major intersection to Abby Ln NE?", "answer": "220th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Abney SW?", "answer": "164th & Richland Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Acorn Bend?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Adraina Way?", "answer": "178th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Akeman Dr?", "answer": "234th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Amanda Ct?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Amy Ct?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Andy Ave?", "answer": "206th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Angela Cir?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Angela Ct?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Antelope St?", "answer": "164th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Ashley Ct?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Aspen Cir?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Auburn Cir?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Auburn Ct?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Auburn Ln?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Avondale Ln?", "answer": "234th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Badger St?", "answer": "164th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Bella Cir?", "answer": "178th & Richland Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Bethany Dr?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Birch Ave?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Blugil Dr?", "answer": "178th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Bobcat Dr?", "answer": "234th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Boevers Way?", "answer": "178th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Bridal Path?", "answer": "192nd & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Buchanan Ave?", "answer": "178th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Buena Vista?", "answer": "206th & County Line Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Burlwood Ln?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Caleb Dr?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Callahan Way?", "answer": "248th & County Line Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Campbell Ln?", "answer": "234th & County Line Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Candice Dr?", "answer": "164th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Canyon View Dr?", "answer": "206th & Frisco Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Carolina Ct?", "answer": "234th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Carrie Ln?", "answer": "164th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Cedar Cir?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Cedar Valley?", "answer": "164th & Cimarron Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Chesapeake Ln?", "answer": "234th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Chestnut Canyon?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Chestnut Cir?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Cheyenne Way?", "answer": "192nd & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Chisholm Ln?", "answer": "178th & County Line Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Chuck Wagon?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Cindy Ct?", "answer": "164th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Cobalt Ct?", "answer": "206th & Frisco Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Cole Way?", "answer": "220th & County Line Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Copper Hill Ct?", "answer": "164th & Sara Rd", "difficulty": "hard" },
+
+
+      { "question": "What is the closest major intersection to Copper Ridge Cir?", "answer": "178th & Piedmont Rd", "difficulty": "hard" },
+
+
+      { "question": "What is the closest major intersection to Covered Wagon Trl?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Coyote Run?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Coyotee Cir?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Craig Dr?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Cypress St?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Daisy Dr?", "answer": "248th & County Line Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Daybreak Ct?", "answer": "206th & Frisco Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Deer Brook Cir?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Deer Brook Trl?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Diamond Ct?", "answer": "164th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Dickerson Ln?", "answer": "248th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Douglas Blvd?", "answer": "178th & Frisco Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Duboise?", "answer": "206th & Frisco Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Eagle Dr?", "answer": "234th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to East Ridge Cir?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to East Trail Dr?", "answer": "192nd & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Elements Dr?", "answer": "234th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Elk Dr?", "answer": "164th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Elm St?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Every Ave?", "answer": "220th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Faint Ridge?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Faint Ridge Way?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Falcon Dr?", "answer": "248th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Fawn Creek Ct?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Fillmore Ave?", "answer": "178th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Fina Dr?", "answer": "206th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Golden Brook Ln?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Golden Hills Ln?", "answer": "178th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Gooder Simpson Blvd?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Grant Dr?", "answer": "248th & Richland Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Green Gulch Run?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Hall?", "answer": "206th & Frisco Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Hammond?", "answer": "234th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Harold Dr?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Hart Dr?", "answer": "206th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Harvest Elm?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Hawk Dr?", "answer": "234th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Heritage Ln?", "answer": "220th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Hickory Cir?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Hickory Trl?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to High Meadows Ln?", "answer": "234th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Horseshoe Bend?", "answer": "192nd & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Hudson Ln?", "answer": "248th & County Line Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Hummingbird Ln?", "answer": "178th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Hunter Ridge?", "answer": "234th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Jane Cir?", "answer": "164th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Johnson Ave?", "answer": "178th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Katlyn Pass?", "answer": "178th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Koerner Dr?", "answer": "192nd & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Korie Cove?", "answer": "178th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Kyle Trail?", "answer": "178th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Lake Dr?", "answer": "248th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Lariet Dr?", "answer": "192nd & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Layton Way?", "answer": "178th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Lincoln Ave?", "answer": "178th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Linton Ln?", "answer": "220th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Locust Grove Run?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Log Cabin?", "answer": "234th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Longhorn Dr?", "answer": "164th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Longview Dr?", "answer": "164th & Richland Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Lorraine Dr?", "answer": "234th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Mahogany Ln?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Makenzie Trail?", "answer": "178th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Mark Circle?", "answer": "178th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Maryanna?", "answer": "178th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Matt Dr?", "answer": "206th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Maverick Pass?", "answer": "178th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Meadowlark St?", "answer": "178th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Merlon Ln?", "answer": "234th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Mimosa Cir?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Misty Dr?", "answer": "164th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Moose St?", "answer": "164th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to North Trail Dr?", "answer": "192nd & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Northridge Ln?", "answer": "220th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Oak Cir?", "answer": "178th & Piedmont Rd", "difficulty": "hard" },
+
+
+      { "question": "What is the closest major intersection to Oaks Terrance?", "answer": "178th & Sara Rd", "difficulty": "hard" },
+
+
+      { "question": "What is the closest major intersection to Old Wagon?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Olde Town Ct?", "answer": "164th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Olde Town Dr?", "answer": "164th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Orchid Ct?", "answer": "164th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Painted Wagon Cir?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Paris Ave?", "answer": "164th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Parker Mill Trail?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Parker Ridge?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Paulette Dr?", "answer": "164th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Peony Cir?", "answer": "164th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Phils Way?", "answer": "164th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Pierce Ave?", "answer": "178th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Pineridge Cir?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Plumeria Ct?", "answer": "164th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Polk Ave?", "answer": "178th & Stout Dr", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Polk Place?", "answer": "178th & Stout Dr", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Poplar Ave?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Primrose Point Ave?", "answer": "164th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Ranch Dr?", "answer": "220th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Raven Dr?", "answer": "234th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Raymond Ln?", "answer": "164th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Red Oak Ln?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Red Valley Dr?", "answer": "206th & Frisco Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Redbud Cir?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Reta Cir?", "answer": "164th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Richards Way?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Ridge Rd?", "answer": "220th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Ridgeview Ln?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Rock Cliff Cir?", "answer": "234th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Rock Cliff Way?", "answer": "234th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Rocky Top Cir?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Rolling Ct?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Ruby Ridge?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Ryan Dr?", "answer": "206th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Saddle Springs Trl?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Shasta Dr?", "answer": "248th & County Line Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Shevlin Ln?", "answer": "206th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Shirley Ln?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Sienna Creek Ln?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Silver Crossings Cir?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Skyler Ridge?", "answer": "178th & County Line Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Slaton Cir?", "answer": "206th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Smokey Bend Ridge?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to South Ridge Ln?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Spur Cir?", "answer": "192nd & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Spur Dr?", "answer": "192nd & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Starlight Terr?", "answer": "206h & County Line Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Starry Night Dr?", "answer": "220th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Stephanie Ln?", "answer": "178th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Stephany Dr?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Steven Dr?", "answer": "164th & Cemetery Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Stone Ave?", "answer": "206th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Strod Cir?", "answer": "248th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Strod Ct?", "answer": "248th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Sue Cir?", "answer": "164th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Sundance Dr?", "answer": "248th & County Line Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Sunflower?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Susanna?", "answer": "178th & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Sycamore Ave?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Tawny Hills?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Taylor Ave?", "answer": "178th & Stout Dr", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Terrace Hills Dr?", "answer": "192nd & Richland Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Terry Ln?", "answer": "206th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Tilton Trl?", "answer": "206th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Topaz Meadows Ct?", "answer": "164th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Tracy Ln?", "answer": "220th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Traditions Dr?", "answer": "234th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Trails End?", "answer": "206th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Treece Dr?", "answer": "192nd & Mustang Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Turkey Creek Ln?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Turkey Hollow Trl?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Tuscany Way?", "answer": "248th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Tyler Ave?", "answer": "178th & Stout Dr", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Umber Way?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Vandiver SW?", "answer": "164th & Richland Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Venetian Ave?", "answer": "164th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Via Arezzo?", "answer": "234th & County Line Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Wagon Train Cir?", "answer": "192nd & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Wagonwheel?", "answer": "192nd & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Wagonwheel Cir?", "answer": "192nd & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Walnut Brook?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to West Rd?", "answer": "220th & Morgan Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Whispering Creek Ct?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Wildcat Way?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Wilson Dr?", "answer": "220th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Winding Creek?", "answer": "178th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Windmill Blvd?", "answer": "178th & Piedmont Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Wolf Lake Dr?", "answer": "234th & Sara Rd", "difficulty": "normal" },
+
+
+      { "question": "What is the closest major intersection to Zella Way?", "answer": "192nd & Morgan Rd", "difficulty": "normal" }
+
+
+    ],
+
+
+    "Neighborhood Roads": [
+
+
+      { "question": "Which neighborhood is Acorn Bend in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Adraina Way in?", "answer": "Shenandoah", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Amanda Ct in?", "answer": "Eastwind", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Amy Ct in?", "answer": "Eastwind", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Angela Cir in?", "answer": "Eastwind", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Angela Ct in?", "answer": "Eastwind", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Antelope St in?", "answer": "Rolling Prairie", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Ashley Ct in?", "answer": "Eastwind", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Aspen Cir in?", "answer": "Windmill Park", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Auburn Cir in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Auburn Ct in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Auburn Ln in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Badger St in?", "answer": "Rolling Prairie", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Bethany Dr in?", "answer": "Eastwind", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Birch Ave in?", "answer": "Windmill Park", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Boevers Way in?", "answer": "Shenandoah", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Bridal Path in?", "answer": "Vails Ranchette", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Buchanan Ave in?", "answer": "Golden Hills", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Burlwood Ln in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Caleb Dr in?", "answer": "Eastwind", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Candice Dr in?", "answer": "Skyline", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Carrie Ln in?", "answer": "Skyline", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Cedar Cir in?", "answer": "Windmill Park", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Chestnut Canyon in?", "answer": "Town Central", "difficulty": "hard" },
+
+
+      { "question": "Which neighborhood is Chestnut Cir in?", "answer": "Windmill Park", "difficulty": "hard" },
+
+
+      { "question": "Which neighborhood is Chuck Wagon in?", "answer": "Circle V", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Cindy Ct in?", "answer": "Skyline", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Copper Hill Ct in?", "answer": "Emerald Pointe", "difficulty": "hard" },
+
+
+      { "question": "Which neighborhood is Copper Ridge Cir in?", "answer": "Town Central", "difficulty": "hard" },
+
+
+      { "question": "Which neighborhood is Covered Wagon Trl in?", "answer": "Circle V", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Coyote Run in?", "answer": "Coyotee Springs", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Coyotee Cir in?", "answer": "Coyotee Springs", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Cypress St in?", "answer": "Windmill Park", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Deer Brook Cir in?", "answer": "Coyotee Springs", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Deer Brook Trl in?", "answer": "Coyotee Springs", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Diamond Ct in?", "answer": "Magnolia Meadows", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is East Ridge Cir in?", "answer": "Emerald Pointe", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Elk Dr in?", "answer": "Rolling Prairie", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Elm St in?", "answer": "Windmill Park", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Faint Ridge in?", "answer": "Circle V", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Faint Ridge Way in?", "answer": "Circle V", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Fillmore Ave in?", "answer": "Golden Hills", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Golden Hills Ln in?", "answer": "Golden Hills", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Gooder Simpson Blvd in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Green Gulch Run in?", "answer": "Coyotee Springs", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Harold Dr in?", "answer": "Eastwind", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Harvest Elm in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Hickory Cir in?", "answer": "Windmill Park", "difficulty": "hard" },
+
+
+      { "question": "Which neighborhood is Hickory Trl in?", "answer": "Town Central", "difficulty": "hard" },
+
+
+      { "question": "Which neighborhood is Horseshoe Bend in?", "answer": "Vails Ranchette", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Johnson Ave in?", "answer": "Golden Hills", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Katlyn Pass in?", "answer": "Shenandoah", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Korie Cove in?", "answer": "Shenandoah", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Kyle Trail in?", "answer": "Shenandoah", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Lariet Dr in?", "answer": "Vails Ranchette", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Layton Way in?", "answer": "Shenandoah", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Lincoln Ave in?", "answer": "Golden Hills", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Locust Grove Run in?", "answer": "Coyotee Springs", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Mahogany Ln in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Makenzie Trail in?", "answer": "Shenandoah", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Mark Circle in?", "answer": "Shenandoah", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Maverick Pass in?", "answer": "Shenandoah", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Mimosa Cir in?", "answer": "Windmill Park", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Misty Dr in?", "answer": "Skyline", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Moose St in?", "answer": "Rolling Prairie", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Oak Cir NW in?", "answer": "Windmill Park", "difficulty": "hard" },
+
+
+      { "question": "Which neighborhood is Oaks Terrance in?", "answer": "Coyotee Springs", "difficulty": "hard" },
+
+
+      { "question": "Which neighborhood is Old Wagon in?", "answer": "Circle V", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Olde Town Ct in?", "answer": "Olde Town", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Olde Town Dr in?", "answer": "Olde Town", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Orchid Ct in?", "answer": "Magnolia Meadows", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Painted Wagon Cir in?", "answer": "Circle V", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Paris Ave in?", "answer": "Magnolia Meadows", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Parker Mill Trail in?", "answer": "Circle V", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Parker Ridge in?", "answer": "Circle V", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Paulette Dr in?", "answer": "Skyline", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Peony Cir in?", "answer": "Magnolia Meadows", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Phils Way in?", "answer": "Skyline", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Pierce Ave in?", "answer": "Golden Hills", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Pineridge Cir in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Plumeria Ct in?", "answer": "Magnolia Meadows", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Poplar Ave in?", "answer": "Windmill Park", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Primrose Point Ave in?", "answer": "Magnolia Meadows", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Raymond Ln in?", "answer": "Skyline", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Red Oak Ln in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Redbud Cir in?", "answer": "Windmill Park", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Reta Cir in?", "answer": "Magnolia Meadows", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Richas Way in?", "answer": "Emerald Pointe", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Ridgeview Ln in?", "answer": "Emerald Pointe", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Rocky Top Cir in?", "answer": "Coyotee Springs", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Ruby Ridge in?", "answer": "Circle V", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Saddle Springs Trl in?", "answer": "Circle V", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Sienna Creek Ln in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Silver Crossings Cir in?", "answer": "Emerald Pointe", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Smokey Bend Ridge in?", "answer": "Circle V", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is South Ridge Ln in?", "answer": "Emerald Pointe", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Spur Cir in?", "answer": "Vails Ranchette", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Spur Dr in?", "answer": "Vails Ranchette", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Stephany Dr in?", "answer": "Eastwind", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Steven Dr in?", "answer": "Skyline", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Sycamore Ave in?", "answer": "Windmill Park", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Tawny Hills in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Topaz Meadows Ct in?", "answer": "Emerald Pointe", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Turkey Hollow Trl in?", "answer": "Coyotee Springs", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Umber Way in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Venetian Ave in?", "answer": "Magnolia Meadows", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Wagon Train Cir in?", "answer": "Circle V", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Wagonwheel in?", "answer": "Vails Ranchette", "difficulty": "hard" },
+
+
+      { "question": "Which neighborhood is Wagonwheel Cir in?", "answer": "Vails Ranchette", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Walnut Brook in?", "answer": "Town Central", "difficulty": "normal" },
+
+
+      { "question": "Which neighborhood is Windmill Blvd in?", "answer": "Windmill Park", "difficulty": "normal" }
+
+
+    ]
+
+
+  }
+
+
+}
