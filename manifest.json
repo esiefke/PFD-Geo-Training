@@ -1,0 +1,16 @@
+{
+  "name": "PFD Geography Training",
+  "short_name": "PFD Training",
+  "description": "Piedmont Fire Department Geography & Hydrant Quiz",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0d0f14",
+  "theme_color": "#0d0f14",
+  "icons": [
+    {
+      "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Fire_Department_Cross.svg/512px-Fire_Department_Cross.svg.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
